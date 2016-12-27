@@ -1,0 +1,278 @@
+<h2>对话框</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#create">创建对话框</a></li>
+            <li class="de-catalog-header"><a href="#option">配置说明</a></li>
+            <li class="de-catalog-header"><a href="#function">KDilog方法</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.poplayer.css--&gt;</code></pre>
+</div>
+<a id="create"></a>
+<div class="de-title">创建对话框</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-button-wrap">
+    	<a href="javascript:void(0);" id="createConDilog" class="ks-button-a">内容对话框</a>
+        <a href="javascript:void(0);" id="createAlertDilog" class="ks-button-a">警告对话框</a>
+        <a href="javascript:void(0);" id="createConfirmDilog" class="ks-button-a">确认对话框</a>
+    </div>
+</div>
+<div class="de-subtitle">代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入drag、dilog代码包*/
+//内容对话框
+var dilog = new KDilog({
+    width : 300,
+    title :　{
+        text : "选择人员"
+    },
+    content : {
+        text : "创建了一个内容对话框！！！呵呵！！！"
+    },
+    btn : {
+        show : true,
+        align : "center",
+        items : [{
+            text : "确定",
+            btnStyle : "blue",
+            callback : function(KDilog){
+                KDilog.setPosition(8, {left:10, top:20});
+                return true;
+            }
+        },
+        {
+            text : "更新内容",
+            btnStyle : "gray",
+            callback : function(KDilog){
+                KDilog.setContent({
+                    loadType : 1,
+                    text : "对话框内容改变了，哈哈！！！"
+                }, 5);
+                return true;
+            }
+        },
+        {
+            text : "取消",
+            btnStyle : "gray",
+            callback : function(KDilog){
+                KDilog.destroy();
+                return true;
+            }
+        }]
+    }
+});
+//警告对话框
+var alertDilog = new KDilog({
+    isConDilog : false
+});
+alertDilog.createAlert(280, "警告对话框", "警告对话框内容");
+//内容对话框
+var confirmDilog = new KDilog({
+    isConDilog : false
+});
+confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Kdilog, $btn){
+    Kdilog.destroy();
+});
+var confirmDilogId = confirmDilog.getDilogId();
+//注册拖动
+var drag = new KDrag({
+    hander : $("#"+confirmDilogId+" .ks-dilog-title"),
+    dragObj : $("#"+confirmDilogId)
+});
+drag.init();</code></pre>
+</div>
+<a id="option"></a>
+<div class="de-subtitle">配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>$parent</td>
+        <td>插入对话框的节点</td>
+        <td><span class="stress">可选（默认为当前页面的body节点）</span></td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>对话框宽度</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>position</td>
+        <td>对话框位置</td>
+        <td>可选，默认垂直居中</td>
+    </tr>
+    <tr>
+        <td>styleName</td>
+        <td>对话框样式名称，可以更改对话框外观</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>isConDilog</td>
+        <td>是否为内容对话框</td>
+        <td><span class="stress">可选（创建警告和确认对话框时要设为false）</span></td>
+    </tr>
+    <tr>
+        <td>title.show</td>
+        <td>是否显示标题</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>title.text</td>
+        <td>标题文本</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>title.text</td>
+        <td>标题文本</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>content.loadType</td>
+        <td>内容载入方式</td>
+        <td><span class="stress">可选（1：普通；2：异步;）</span></td>
+    </tr>
+    <tr>
+        <td>content.text</td>
+        <td>内容文本</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>content.loadUrl</td>
+        <td>异步加载时的页面地址</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>content.modal</td>
+        <td>是否为模态窗口</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>content.btn.show</td>
+        <td>是否显示按钮</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>content.btn.align</td>
+        <td>按钮对齐方式</td>
+        <td><span class="stress">可选（left、center、right）</span></td>
+    </tr>
+    <tr>
+        <td>content.btn.items</td>
+        <td>按钮组</td>
+        <td>可选</td>
+    </tr>
+</table>
+<a id="function"></a>
+<div class="de-subtitle">KDilog方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="470">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>getDilogId</td>
+        <td>获取对话框ID</td>
+    </tr>
+    <tr>
+        <td>setPosition(integer position, integer value)</td>
+        <td>设置对话框位置</td>
+    </tr>
+    <tr>
+        <td>setContent(string content, integer position)</td>
+        <td>设置对话框内容</td>
+    </tr>
+    <tr>
+        <td>createAlert(integer width, string title, string content)</td>
+        <td>创建警告对话框</td>
+    </tr>
+    <tr>
+        <td>createConfirm(integer width, string title, string content, function callback)</td>
+        <td>创建确认对话框</td>
+    </tr>
+    <tr>
+        <td>destroy</td>
+        <td>销毁对话框</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.drag.js"></script>
+<script type="text/javascript" src="../../src/kissui.dilog.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//创建内容对话框
+		$("#createConDilog").bind("click", function(){
+			var dilog = new KDilog({
+				width : 300,
+				title :　{
+					text : "选择人员"
+				},
+				content : {
+					text : "创建了一个内容对话框！！！呵呵！！！"
+				},
+				btn : {
+					show : true,
+					align : "center",
+					items : [{
+						text : "确定",
+						btnStyle : "blue",
+						callback : function(KDilog){
+							KDilog.setPosition(8, {left:10, top:20});
+							return true;
+						}
+					},
+					{
+						text : "更新内容",
+						btnStyle : "gray",
+						callback : function(KDilog){
+							KDilog.setContent({
+								loadType : 1,
+								text : "对话框内容改变了，哈哈！！！"
+							}, 5);
+							return true;
+						}
+					},
+					{
+						text : "取消",
+						btnStyle : "gray",
+						callback : function(KDilog){
+							KDilog.destroy();
+							return true;
+						}
+					}]
+				}
+			});
+		});
+		//创建警告对话框
+		$("#createAlertDilog").bind("click", function(){
+			var alertDilog = new KDilog({
+				isConDilog : false
+			});
+			alertDilog.createAlert(280, "警告对话框", "警告对话框内容");
+		});
+		//创建确认对话框
+		$("#createConfirmDilog").bind("click", function(){
+			var confirmDilog = new KDilog({
+				isConDilog : false
+			});
+			confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Kdilog, $btn){
+				Kdilog.destroy();
+			});
+			var confirmDilogId = confirmDilog.getDilogId();
+			var drag = new KDrag({
+				hander : $("#"+confirmDilogId+" .ks-dilog-title"),
+				dragObj : $("#"+confirmDilogId)
+			});
+			drag.init();
+		});
+	});
+</script>

@@ -1,0 +1,147 @@
+html {
+	overflow-x: hidden;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, label, textarea, p, header, nav, section, article, aside, footer, figure, figcaption, menu, button {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: 0;
+}
+strong, em {
+	font-weight: 600;
+}
+ul, ol {
+	list-style-type: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td, div {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+input, label {
+	vertical-align: middle;
+	letter-spacing: 0;
+}
+input::-ms-clear {
+     display: none;  
+}
+a, a:visited {
+	text-decoration: none;
+}
+* {
+	outline:none;
+}
+body {
+	font-size: 12px;
+	font-family: "Microsoft Yahei", "微软雅黑", "宋体";
+	/*在谷歌浏览器中设置小于12号的字体*/
+	-webkit-text-size-adjust: none;
+}
+/*工具类*/
+.ks-relative{
+	position: relative;
+}
+.ks-absolute{
+	position: absolute;
+}
+.ks-layer-cen, .ks-layer-cen .inner {
+	position:relative;
+	float: left;
+}
+.ks-layer-cen{
+	left: 50%;
+}
+.ks-layer-cen .inner{
+	left: -50%;
+	height: 1%;
+	overflow: hidden;
+}
+.ks-text-lf{
+	text-align: left;
+}
+.ks-text-cen{
+	text-align: center;
+}
+.ks-text-rg{
+	text-align: right;
+}
+.ks-fl{
+	float: left;
+}
+.ks-fr{
+	float: right;
+}
+.ks-clear-fl {
+	clear:both;
+	*height:0px;
+	*font-size:0px;
+}
+.ks-layer-hidden{
+	visibility:hidden;
+}
+.ks-layer-none{
+	display:none;
+}
+/*标签*/
+.ks-label{
+	display: inline-block;
+	padding: 2px 7px;
+	color: #fff;
+	font-size: 12px;
+}
+.ks-label-default{
+	background-color: #777;
+}
+.ks-label-primary{
+	background-color: #428bca;
+}
+.ks-label-success{
+	background-color: #5cb85c;
+}
+.ks-label-info{
+	background-color: #5bc0de;
+}
+.ks-label-warning{
+	background-color: #f0ad4e;
+}
+.ks-label-danger{
+	background-color: #d9534f;
+}
+.ks-label-radius{
+	border-radius: 3px;
+}
+.ks-label-round{
+	border-radius: 20px;
+}
+/*面包屑导航*/
+.ks-breadcrumb{
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+.ks-breadcrumb li{
+	float: left;
+	font-size: 12px;
+}
+.ks-breadcrumb .active, .ks-breadcrumb .slash{
+	 color: #999;
+}
+.ks-breadcrumb a, .ks-breadcrumb a:visited{
+	color: #0e90d2;
+} 
+.ks-breadcrumb .arrow{
+	width: 20px;
+	height: 12px;
+	background:url(../images/ui.icon1x.png) no-repeat -13px -47px;
+	margin-top: 3px;
+}

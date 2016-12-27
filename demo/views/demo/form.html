@@ -1,0 +1,331 @@
+<style type="text/css">
+	.app-input-depart{
+		background:url(../../web/images/test/depart.png) no-repeat;
+	}
+</style>
+<h2>表单</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#create">创建实例</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.form.css、kissui.datepicker.css--&gt;</code></pre>
+</div>
+<a id="create"></a>
+<div class="de-title">创建实例</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	  <div class="ks-input-box ks-form-disable">
+          <input type="text" class="ks-textbox" disabled="disabled" value="这是一个被禁用的输入框">
+    </div>
+    <div class="ks-input-box" style="margin-top:10px;">
+        <div class="ks-input-lf-icon">
+            <i class="app-input-depart"></i>
+        </div>
+        <div class="ks-rg-input">
+            <input type="text" class="ks-textbox">
+        </div>
+    </div>
+    <div id="date" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date input" data-event-obj="#date">
+          <div class="ks-input-rg-icon">
+              <i class="ks-date-icon"></i>
+          </div>
+          <div class="ks-lf-input">
+              <input type="text" name="date1" class="ks-textbox" readonly>
+          </div>
+     </div>
+     <div id="date1" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date1 input" data-event-obj="#date1" data-language="en" data-date-format="yyyy/mm/dd">
+          <div class="ks-input-rg-icon">
+              <i class="ks-date-icon"></i>
+          </div>
+          <div class="ks-lf-input">
+              <input type="text" name="date2" class="ks-textbox" readonly>
+          </div>
+     </div>
+    <div id="date2" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date2 input" data-event-obj="#date2" data-show-time="true" data-min-year="1900" data-max-year="2190">
+          <div class="ks-input-rg-icon">
+              <i class="ks-time-icon"></i>
+          </div>
+          <div class="ks-lf-input">
+              <input type="text" name="date3" class="ks-textbox" readonly>
+          </div>
+      </div>
+    <div class="ks-input-box" style="margin-top:10px;">
+          <div class="ks-input-rg-icon">
+            <i class="ks-file-icon"></i>
+          </div>
+          <div class="ks-lf-input">
+              <input type="text" class="ks-textbox" readonly>
+          </div>
+      </div>
+     <a href="javascript:void(0);" class="ks-switch ks-switch1-on" title="关闭" style="margin-top:10px;" data-style="ks-switch1-on|ks-switch1-off">
+          <i></i>
+          <strong>开启发现周围的朋友</strong>
+          <input type="hidden" name="fx1" value="1">
+      </a>
+      <a href="javascript:void(0);" class="ks-switch ks-switch1-off" title="打开" style="margin-top:10px;" data-style="ks-switch1-on|ks-switch1-off">
+          <i></i>
+          <strong>开启发现周围的朋友</strong>
+          <input type="hidden" name="fx2" value="0">
+      </a>
+      <a href="javascript:void(0);" class="ks-switch ks-switch2-on" title="关闭" style="margin-top:10px;" data-style="ks-switch2-on|ks-switch2-off">
+          <i></i>
+          <strong>开启发现周围的朋友</strong>
+          <input type="hidden" name="fx3" value="1">
+      </a>
+      <a href="javascript:void(0);" class="ks-switch ks-switch2-off" title="打开" style="margin-top:10px;" data-style="ks-switch2-on|ks-switch2-off">
+          <i></i>
+          <strong>开启发现周围的朋友</strong>
+          <input type="hidden" name="fx4" value="0">
+      </a>
+      <div class="ks-radio" style="margin-top:10px;" data-radio-name="xx">
+          <a href="javascript:void(0);" class="checked">
+              <i></i>
+              <strong>数学</strong>
+              <input type="hidden" name="xx" value="1">
+          </a>
+          <a href="javascript:void(0);">
+              <i></i> 
+              <strong>语文</strong>
+              <input type="hidden" name="xx" value="2">
+          </a>
+          <a href="javascript:void(0);" class="checked-disable">
+              <i></i> 
+              <strong>外语</strong>
+              <input type="hidden" name="xx" value="3">
+          </a>
+      </div>
+    <div class="ks-checkbox ks-checkbox-disable" style="margin-top:10px;" data-checkbox-name="xq">
+          <a href="javascript:void(0);" class="checked">
+              <i></i>
+              <strong>体育课</strong>
+              <input type="hidden" name="xq" value="1">
+          </a>
+          <a href="javascript:void(0);">
+              <i></i> 
+              <strong>音乐课</strong>
+              <input type="hidden" name="xq" value="2">
+          </a>
+          <a href="javascript:void(0);" class="checked">
+              <i></i> 
+              <strong>数学课</strong>
+              <input type="hidden" name="xq" value="3">
+          </a>
+          <a href="javascript:void(0);" class="checked-disable">
+              <i></i> 
+              <strong>毛泽东理论</strong>
+              <input type="hidden" name="xq" value="4">
+          </a>
+      </div>
+      <div class="ks-textarea" style="margin-top:10px;">
+          <textarea name="textarea"></textarea>
+      </div>	
+      <div id="select1" style="margin-top:10px;"></div>
+      <div id="select2" style="margin-top:10px;">
+          <select>
+              <option value="1">成都</option>
+              <option value="2">绵阳</option>
+              <option value="3">德阳</option>
+              <option value="4">广汉</option> 
+              <option value="5">广元</option>
+          </select>
+      </div>	
+</div>
+<div class="de-subtitle">HTML代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;--文本域--&gt;
+&lt;div class="ks-input-box"&gt;
+      &lt;input type="text" class="ks-textbox"&gt;
+&lt;/div&gt;
+&lt;--带图标的文本域--&gt;
+&lt;div class="ks-input-box" style="margin-top:10px;"&gt;
+    &lt;div class="ks-input-lf-icon"&gt;
+        &lt;i class="app-input-depart"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ks-rg-input"&gt;
+        &lt;input type="text" class="ks-textbox"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;--日期控件--&gt;
+&lt;div id="date" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date input" data-event-obj="#date"&gt;
+      &lt;div class="ks-input-rg-icon"&gt;
+          &lt;i class="ks-date-icon"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="ks-lf-input"&gt;
+          &lt;input type="text" name="date1" class="ks-textbox" readonly&gt;
+      &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div id="date1" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date1 input" data-event-obj="#date1" data-language="en" data-date-format="yyyy/mm/dd"&gt;
+      &lt;div class="ks-input-rg-icon"&gt;
+          &lt;i class="ks-date-icon"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="ks-lf-input"&gt;
+          &lt;input type="text" name="date2" class="ks-textbox" readonly&gt;
+      &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;--日期时间控件--&gt;
+&lt;div id="date2" class="ks-input-box" type="ks-date-picker" style="margin-top:10px;" data-input="#date2 input" data-event-obj="#date2" data-show-time="true" data-min-year="1900" data-max-year="2190"&gt;
+      &lt;div class="ks-input-rg-icon"&gt;
+          &lt;i class="ks-time-icon"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="ks-lf-input"&gt;
+          &lt;input type="text" name="date3" class="ks-textbox" readonly&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;--上传控件--&gt;
+&lt;div class="ks-input-box" style="margin-top:10px;"&gt;
+      &lt;div class="ks-input-rg-icon"&gt;
+        &lt;i class="ks-file-icon"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class="ks-lf-input"&gt;
+          &lt;input type="text" class="ks-textbox" readonly&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;--开关--&gt;
+ &lt;a href="javascript:void(0);" class="ks-switch ks-switch1-on" title="关闭" style="margin-top:10px;" data-style="ks-switch1-on|ks-switch1-off"&gt;
+      &lt;i&gt;&lt;/i&gt;
+      &lt;strong&gt;开启发现周围的朋友&lt;/strong&gt;
+      &lt;input type="hidden" name="fx1" value="1"&gt;
+  &lt;/a&gt;
+  &lt;a href="javascript:void(0);" class="ks-switch ks-switch1-off" title="打开" style="margin-top:10px;" data-style="ks-switch1-on|ks-switch1-off"&gt;
+      &lt;i&gt;&lt;/i&gt;
+      &lt;strong&gt;开启发现周围的朋友&lt;/strong&gt;
+      &lt;input type="hidden" name="fx2" value="0"&gt;
+  &lt;/a&gt;
+  &lt;a href="javascript:void(0);" class="ks-switch ks-switch2-on" title="关闭" style="margin-top:10px;" data-style="ks-switch2-on|ks-switch2-off"&gt;
+      &lt;i&gt;&lt;/i&gt;
+      &lt;strong&gt;开启发现周围的朋友&lt;/strong&gt;
+      &lt;input type="hidden" name="fx3" value="1"&gt;
+  &lt;/a&gt;
+  &lt;a href="javascript:void(0);" class="ks-switch ks-switch2-off" title="打开" style="margin-top:10px;" data-style="ks-switch2-on|ks-switch2-off"&gt;
+      &lt;i&gt;&lt;/i&gt;
+      &lt;strong&gt;开启发现周围的朋友&lt;/strong&gt;
+      &lt;input type="hidden" name="fx4" value="0"&gt;
+  &lt;/a&gt;
+&lt;--单选按钮--&gt;
+  &lt;div class="ks-radio" style="margin-top:10px;" data-radio-name="xx"&gt;
+      &lt;a href="javascript:void(0);" class="checked"&gt;
+          &lt;i&gt;&lt;/i&gt;
+          &lt;strong&gt;数学&lt;/strong&gt;
+          &lt;input type="hidden" name="xx" value="1"&gt;
+      &lt;/a&gt;
+      &lt;a href="javascript:void(0);"&gt;
+          &lt;i&gt;&lt;/i&gt; 
+          &lt;strong&gt;语文&lt;/strong&gt;
+          &lt;input type="hidden" name="xx" value="2"&gt;
+      &lt;/a&gt;
+      &lt;a href="javascript:void(0);"&gt;
+          &lt;i&gt;&lt;/i&gt; 
+          &lt;strong&gt;外语&lt;/strong&gt;
+          &lt;input type="hidden" name="xx" value="3"&gt;
+      &lt;/a&gt;
+  &lt;/div&gt;
+&lt;--复选框--&gt;
+&lt;div class="ks-checkbox" style="margin-top:10px;" data-checkbox-name="xq"&gt;
+      &lt;a href="javascript:void(0);" class="checked"&gt;
+          &lt;i&gt;&lt;/i&gt;
+          &lt;strong&gt;体育课&lt;/strong&gt;
+          &lt;input type="hidden" name="xq" value="1"&gt;
+      &lt;/a&gt;
+      &lt;a href="javascript:void(0);"&gt;
+          &lt;i&gt;&lt;/i&gt; 
+          &lt;strong&gt;音乐课&lt;/strong&gt;
+          &lt;input type="hidden" name="xq" value="2"&gt;
+      &lt;/a&gt;
+      &lt;a href="javascript:void(0);" class="checked"&gt;
+          &lt;i&gt;&lt;/i&gt; 
+          &lt;strong&gt;数学课&lt;/strong&gt;
+          &lt;input type="hidden" name="xq" value="3"&gt;
+      &lt;/a&gt;
+      &lt;a href="javascript:void(0);"&gt;
+          &lt;i&gt;&lt;/i&gt; 
+          &lt;strong&gt;毛泽东理论&lt;/strong&gt;
+          &lt;input type="hidden" name="xq" value="4"&gt;
+      &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;--文本区域--&gt;
+  &lt;div class="ks-textarea" style="margin-top:10px;"&gt;
+      &lt;textarea name="textarea"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;	
+  &lt;--下拉列表--&gt;
+  &lt;div id="select1" style="margin-top:10px;"&gt;&lt;/div&gt;
+  &lt;div id="select2" style="margin-top:10px;"&gt;
+      &lt;select&gt;
+          &lt;option value="1"&gt;成都&lt;/option&gt;
+          &lt;option value="2"&gt;绵阳&lt;/option&gt;
+          &lt;option value="3"&gt;德阳&lt;/option&gt;
+          &lt;option value="4"&gt;广汉&lt;/option&gt; 
+          &lt;option value="5"&gt;广元&lt;/option&gt;
+      &lt;/select&gt;
+  &lt;/div&gt;</code></pre>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入calendar、comboBox、datePicker、renderComp代码包*/
+KRenderComp.renderFormComp();
+var select1 = new KComboBox({
+    $parent : $("#select1"),
+    changeFunc : function(value, text){
+        alert(KRenderComp.getRadioValue("xx"));
+        alert(KRenderComp.getCheckboxValue("xq"));
+        alert(KRenderComp.getSwitchValue("fx1"));
+        alert(KRenderComp.getDatePickerValue("date1"));
+        alert(KRenderComp.getDatePickerValue("date2"));
+        alert(KRenderComp.getDatePickerValue("date3"));
+    }
+});
+var select2 = new KComboBox({
+    $parent : $("#select2"),
+    width : 120,
+    align : "center",
+    render : 2, 
+    selectId : "#select2 select",
+    disable : true,
+    changeFunc : function(value, text){
+        select2.addItem({
+            value : value,
+            text : text
+        });
+    }
+});</code></pre>
+</div>
+<script type="text/javascript" src="../../src/kissui.calendar.js"></script>
+<script type="text/javascript" src="../../src/kissui.combobox.js"></script>
+<script type="text/javascript" src="../../src/kissui.datepicker.js"></script>
+<script type="text/javascript">
+	$(function(){
+		KRenderComp.renderFormComp();
+		var select1 = new KComboBox({
+			$parent : $("#select1"),
+			changeFunc : function(value, text){
+				alert(KRenderComp.getRadioValue("xx"));
+				alert(KRenderComp.getCheckboxValue("xq"));
+				alert(KRenderComp.getSwitchValue("fx1"));
+				alert(KRenderComp.getDatePickerValue("date1"));
+				alert(KRenderComp.getDatePickerValue("date2"));
+				alert(KRenderComp.getDatePickerValue("date3"));
+			}
+		});
+		var select2 = new KComboBox({
+			$parent : $("#select2"),
+			width : 120,
+			align : "center",
+			render : 2, 
+			selectId : "#select2 select",
+      disable : true,
+			changeFunc : function(value, text){
+				select2.addItem({
+					value : value,
+					text : text
+				});
+			}
+		});
+	});
+</script>

@@ -1,0 +1,192 @@
+/*
+ * 工具提示
+ * author:张渊
+ * modifyTime:2015-11-5
+ */
+.ks-tooltip, .ks-tip{
+	position:absolute;
+	z-index:100000;
+}
+.ks-tooltip {
+	left:0px;
+	top:0px;
+	max-width: 200px;
+	background-color:#333;
+	border-radius: 3px;
+}
+.ks-tooltip i.ks-tooltip-arrow {
+	position:absolute;
+	display:block;
+	width: 0;
+	height: 0;
+}
+.ks-tooltip-top i.ks-tooltip-arrow{
+	left:50%;
+	bottom:-6px;
+	margin-left:-6px;
+	border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+}
+.ks-tooltip-right i.ks-tooltip-arrow{
+	left:-6px;
+	top:50%;
+	margin-top:-6px;
+	border-top: 6px solid transparent;
+    border-right: 6px solid #333;
+    border-bottom: 6px solid transparent;
+}
+.ks-tooltip-bottom i.ks-tooltip-arrow{
+	left:50%;
+	top:-6px;
+	margin-left:-6px;
+	border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #333;
+}
+.ks-tooltip-left i.ks-tooltip-arrow{
+	right:-6px;
+	top:50%;
+	margin-top:-6px;
+	border-top: 6px solid transparent;
+    border-left: 6px solid #333;
+    border-bottom: 6px solid transparent;
+}
+.ks-tooltip-content{
+	color:#bdbfbf;
+	font-size:12px;
+	padding:5px 10px;
+	line-height:20px;
+}
+.ks-tip-mini {
+	width:190px;
+	margin-left:-95px;
+}
+.ks-tip-small {
+	width:210px;
+	margin-left:-105px;
+}
+.ks-tip-default {
+	width:260px;
+	margin-left:-130px;
+}
+.ks-tip-large {
+	width:320px;
+	margin-left:-160px;
+}
+.ks-tip {
+	left:50%;
+	top:10px;
+	height:45px;
+	text-align:center;
+	line-height:45px;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.ks-loading-tip, .ks-succeed-tip, .ks-failure-tip {
+	font-size:14px;
+}
+.ks-loading-tip, .ks-succeed-tip {
+	color: #000;
+}
+.ks-failure-tip {
+	color: #808080;
+}
+.ks-loading-tip i, .ks-succeed-tip i, .ks-failure-tip i {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	margin-right:8px;
+	vertical-align:-3px;
+ 	*vertical-align:0;
+	background-repeat:no-repeat;
+}
+.ks-loading-tip i {
+	background-image:url(../images/ui.loader1.gif);
+}
+.ks-succeed-tip i, .ks-failure-tip i {
+	background-image:url(../images/ui.icon1x.png);
+}
+.ks-succeed-tip i {
+	background-position:-50px 0;
+}
+.ks-failure-tip i {
+	background-position:-34px 0;
+}
+.ks-prompt {
+	position: relative;
+	font-size: 14px;
+	border: 1px solid #0082d5;
+	border-radius: 5px; 
+	background-color: #d9ecf9;
+	padding: 10px 0;
+}
+.ks-prompt-icon, .ks-prompt-close {
+	position: absolute;
+	display: block;
+	background-image:url(../images/ui.icon1x.png);
+	background-repeat: no-repeat;
+}
+.ks-prompt-icon{
+	left: 16px;
+	top: 10px;
+	width: 24px;
+	height: 24px;
+	background-position:-71px -21px;
+}
+.ks-prompt-close{
+	top: 16px;
+	right: 20px;
+	width: 12px;
+	height: 12px;
+	background-position:0 -84px;
+}
+.ks-prompt-text{
+	color: #0082d5;
+	line-height: 24px;
+	margin:0 55px;
+}
+.ks-prompt-text strong{
+	font-weight: bold;
+}
+.ks-prompt-success{
+	border-color: #04be5b;
+	background-color: #daf5e7;
+}
+.ks-prompt-success .ks-prompt-icon{
+	background-position:0 -21px;
+}
+.ks-prompt-success .ks-prompt-text{
+	color: #04be5b;
+}
+.ks-prompt-success .ks-prompt-close{
+	background-position:0 -48px;
+}
+.ks-prompt-warn{
+	border-color: #ff9948;
+	background-color: #fff0e4;
+}
+.ks-prompt-warn .ks-prompt-icon{
+	background-position:-23px -21px;
+}
+.ks-prompt-warn .ks-prompt-text{
+	color: #ff9948;
+}
+.ks-prompt-warn .ks-prompt-close{
+	background-position:0 -60px;
+}
+.ks-prompt-error{
+	border-color: #d2335c;
+	background-color: #f8e1e7;
+}
+.ks-prompt-error .ks-prompt-icon{
+	background-position:-47px -21px;
+}
+.ks-prompt-error .ks-prompt-text{
+	color: #d2335c;
+}
+.ks-prompt-error .ks-prompt-close{
+	background-position:0 -72px;
+}

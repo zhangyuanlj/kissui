@@ -1,0 +1,326 @@
+<h2>工具提示</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#base">基础样式</a></li>
+            <li class="de-catalog-header"><a href="#size">尺寸修饰</a></li>
+            <li class="de-catalog-header"><a href="#ksCreate">快速创建</a></li>
+            <li class="de-catalog-header"><a href="#dmCreate">代码创建</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.tooltip.css--&gt;</code></pre>
+</div>
+<a id="base"></a>
+<div class="de-title">基础样式</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	 <div style="position:relative; height:60px;">
+         <div class="ks-tip ks-loading-tip ks-tip-default">
+             <i></i> 正在加载数据...
+         </div>
+     </div>
+     <div style="position:relative; height:60px;">
+        <div class="ks-tip ks-succeed-tip ks-tip-default">
+            <i></i> 数据已经成功提交给后台
+        </div>
+    </div>
+    <div style="position:relative; height:60px;">
+        <div class="ks-tip ks-failure-tip ks-tip-default">
+            <i></i> 数据提交失败，请稍后重试
+        </div>
+    </div>
+    <div style="position:relative; height:60px;">
+        <div class="ks-tooltip ks-tooltip-top" style="left:10px;">
+            <i class="ks-tooltip-arrow"></i>
+            <div class="ks-tooltip-content">我是位于上方的工具提示</div>
+        </div>
+    </div>
+    <div style="position:relative; height:60px;">
+        <div class="ks-tooltip ks-tooltip-right" style="left:10px;">
+            <i class="ks-tooltip-arrow"></i>
+            <div class="ks-tooltip-content">我是位于右边的工具提示</div>
+        </div>
+    </div>
+    <div style="position:relative; height:60px;">
+        <div class="ks-tooltip ks-tooltip-bottom" style="left:10px;">
+            <i class="ks-tooltip-arrow"></i>
+            <div class="ks-tooltip-content">我是位于下方的工具提示</div>
+        </div>
+    </div>
+    <div style="position:relative; height:60px;">
+        <div class="ks-tooltip ks-tooltip-left" style="left:10px;">
+            <i class="ks-tooltip-arrow"></i>
+            <div class="ks-tooltip-content">我是位于左边的工具提示</div>
+        </div>
+    </div>
+    <div class="ks-prompt" style="margin:20px 0;">
+        <i class="ks-prompt-icon"></i>
+        <div class="ks-prompt-text"><strong>信息.</strong> 您有555条未读消息！</div>
+        <a href="javascript:void(0);" class="ks-prompt-close"></a>
+    </div>
+    <div class="ks-prompt ks-prompt-success" style="margin:20px 0;">
+        <i class="ks-prompt-icon"></i>
+        <div class="ks-prompt-text"><strong>成功 !</strong> 页面加载完成，请进想下一步操作！页面加载完成，请进想下一步操作！页面加载完成，请进想下一步操作！页面加载完成，请进想下一步操作！页面加载完成，请进想下一步操作！</div>
+        <a href="javascript:void(0);" class="ks-prompt-close"></a>
+    </div>
+    <div class="ks-prompt ks-prompt-warn" style="margin:20px 0;">
+        <i class="ks-prompt-icon"></i>
+        <div class="ks-prompt-text"><strong>警告 !</strong> 本表单当前不能被操作！</div>
+        <a href="javascript:void(0);" class="ks-prompt-close"></a>
+    </div>
+    <div class="ks-prompt ks-prompt-error" style="margin:20px 0;">
+        <i class="ks-prompt-icon"></i>
+        <div class="ks-prompt-text"><strong>错误 !</strong> 页面加载失败，请重新加载！</div>
+        <a href="javascript:void(0);" class="ks-prompt-close"></a>
+    </div>
+</div>
+<div class="de-subtitle">代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;--加载中--&gt;
+&lt;div class="ks-tip ks-loading-tip ks-tip-default"&gt;
+	&lt;i&gt;&lt;/i&gt; 正在加载数据...
+&lt;/div&gt;
+&lt;--操作成功--&gt;
+&lt;div class="ks-tip ks-succeed-tip ks-tip-default"&gt;
+	&lt;i&gt;&lt;/i&gt; 数据已经成功提交给后台
+&lt;/div&gt;
+&lt;--操作失败--&gt;
+&lt;div class="ks-tip ks-failure-tip ks-tip-default"&gt;
+	&lt;i&gt;&lt;/i&gt; 数据提交失败，请稍后重试
+&lt;/div&gt;
+&lt;--上方的工具提示--&gt;
+&lt;div class="ks-tooltip ks-tooltip-top"&gt;
+    &lt;i class="ks-tooltip-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-tooltip-content"&gt;我是位于上方的工具提示&lt;/div&gt;
+&lt;/div&gt;
+&lt;--右边的工具提示--&gt;
+&lt;div class="ks-tooltip ks-tooltip-right"&gt;
+    &lt;i class="ks-tooltip-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-tooltip-content"&gt;我是位于右边的工具提示&lt;/div&gt;
+&lt;/div&gt;
+&lt;--下方的工具提示--&gt;
+&lt;div class="ks-tooltip ks-tooltip-bottom"&gt;
+    &lt;i class="ks-tooltip-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-tooltip-content"&gt;我是位于下方的工具提示&lt;/div&gt;
+&lt;/div&gt;
+&lt;--左边的工具提示--&gt;
+&lt;div class="ks-tooltip ks-tooltip-left"&gt;
+    &lt;i class="ks-tooltip-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-tooltip-content"&gt;我是位于左边的工具提示&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="de-demo-explain"><span>说明</span> 工具提示一般通过JS动态创建，当然您也可以先将其放入节点中隐藏，通过position代码包计算位置再显示！！！</div>
+<a id="size"></a>
+<div class="de-title">尺寸修饰</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	 <div style="position:relative; height:60px;">
+         <div class="ks-tip ks-succeed-tip ks-tip-small">
+             <i></i> 数据已经成功提交给后台
+         </div>
+     </div>
+     <div style="position:relative; height:60px;">
+         <div class="ks-tip ks-succeed-tip ks-tip-default">
+             <i></i> 数据已经成功提交给后台
+         </div>
+     </div>
+     <div style="position:relative; height:60px;">
+         <div class="ks-tip ks-succeed-tip ks-tip-large">
+             <i></i> 数据已经成功提交给后台
+         </div>
+     </div>
+</div>
+<div class="de-subtitle">代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;--小尺寸--&gt;
+&lt;div class="ks-tip ks-succeed-tip ks-tip-small"&gt;
+	&lt;i&gt;&lt;/i&gt; 数据已经成功提交给后台
+&lt;/div&gt;
+&lt;--默认尺寸--&gt;
+&lt;div class="ks-tip ks-succeed-tip ks-tip-default"&gt;
+	&lt;i&gt;&lt;/i&gt; 数据已经成功提交给后台
+&lt;/div&gt;
+&lt;--大尺寸--&gt;
+&lt;div class="ks-tip ks-succeed-tip ks-tip-large"&gt;
+	&lt;i&gt;&lt;/i&gt; 数据已经成功提交给后台
+&lt;/div&gt;</code></pre>
+</div>
+<a id="ksCreate"></a>
+<div class="de-title">快速创建</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-button-wrap ks-button-group">
+    	<a href="#" id="tooltip1" type="ks-tooltip" data-event-obj="#tooltip1" data-width="120" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-animate="true" data-offset="10" data-location="right" class="ks-button-a ks-button-group-first ks-button-primary">Link</a>
+    	<button class="ks-button-input ks-button-primary" id="tooltip2" type="ks-tooltip" data-event-obj="#tooltip2" data-width="240" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-location="top" type="button">Button</button>
+        <button class="ks-button-input ks-button-group-last ks-button-primary" id="tooltip3" type="ks-tooltip" data-event-obj="#tooltip3" data-width="240" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-location="left" type="button">Button</button>
+    </div>
+</div>
+<div class="de-subtitle">HTML代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;div class="ks-button-wrap ks-button-group"&gt;
+    	&lt;a href="#" id="tooltip1" type="ks-tooltip" data-event-obj="#tooltip1" data-width="120" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-animate="true" data-offset="10" data-location="right" class="ks-button-a ks-button-group-first ks-button-primary"&gt;Link&lt;/a&gt;
+    	&lt;button class="ks-button-input ks-button-primary" id="tooltip2" type="ks-tooltip" data-event-obj="#tooltip2" data-width="240" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-location="top" type="button"&gt;Button&lt;/button&gt;
+        &lt;button class="ks-button-input ks-button-group-last ks-button-primary" id="tooltip3" type="ks-tooltip" data-event-obj="#tooltip3" data-width="240" data-content="这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字" data-location="left" type="button"&gt;Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div class="de-subtitle">HTML属性配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td>指定该控件要显示tooltip</td>
+        <td><span class="stress">必填（值为ks-tooltip）</span></td>
+    </tr>
+    <tr>
+        <td>data-event-obj</td>
+        <td>显示tooltip的容器ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>data-width</td>
+        <td>tooltip宽度</td>
+        <td>可选，默认值为200</td>
+    </tr>
+    <tr>
+        <td>data-content</td>
+        <td>tooltip内容</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-location</td>
+        <td>tooltip显示的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-dynamic-enable</td>
+        <td>是否动态计算tooltip的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-dynamic-direction</td>
+        <td>是在水平方向（1）上计算，还是在垂直方向（2）上计算</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-animate</td>
+        <td>是否以动画方式显示tooltip</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-offset</td>
+        <td>tooltip偏移的位置</td>
+        <td>可选</td>
+    </tr>
+</table>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入position、tootip、renderComp代码包*/
+KRenderComp.rendertooltip();</code></pre>
+</div>
+<a id="dmCreate"></a>
+<div class="de-title">代码创建</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-button-wrap">
+    	<a href="#" id="tooltip4" class="ks-button-a ks-button-primary">代码创建</a>
+    </div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入position、tootip代码包*/
+var tooltip = new KTootip({
+    $eventObj : $("#tooltip4"),
+    width : 120,
+    dynamic : {
+        enable : true,
+        direction : 2
+    }
+});</code></pre>
+</div>
+<div class="de-subtitle">KTootip配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>$eventObj</td>
+        <td>显示tooltip的容器ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>tooltip宽度</td>
+        <td>可选，默认值为200</td>
+    </tr>
+    <tr>
+        <td>content</td>
+        <td>tooltip内容</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td>tooltip显示的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>dynamic.enable</td>
+        <td>是否动态计算tooltip的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>dynamic.direction</td>
+        <td>是在水平方向（1）上计算，还是在垂直方向（2）上计算</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>animate</td>
+        <td>是否以动画方式显示tooltip</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>offset</td>
+        <td>tooltip偏移的位置</td>
+        <td>可选</td>
+    </tr>
+</table>
+<div class="de-subtitle">KTootip方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="120">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>gettooltipId</td>
+        <td>获取创建tooltip的ID</td>
+    </tr>
+    <tr>
+        <td>destroy</td>
+        <td>销毁创建的tooltip</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.tootip.js"></script>
+<script type="text/javascript">
+	$(function(){
+		KRenderComp.renderTooltip();
+		var tooltip = new KTootip({
+			$eventObj : $("#tooltip4"),
+			width : 120,
+			dynamic : {
+				enable : true,
+				direction : 2
+			}
+		});
+	});
+</script>

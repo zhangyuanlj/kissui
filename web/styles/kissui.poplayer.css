@@ -1,0 +1,174 @@
+/*
+ * 弹出层、遮罩层、对话框
+ * author:张渊
+ * modifyTime:2015-11-6
+ */
+.ks-mask, .ks-dilog, .ks-poplayer {
+	position:absolute;
+}
+.ks-mask{
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	z-index:9999;
+}
+.ks-dilog{
+	border:1px solid #aaa;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+	border-radius:5px;
+	background-color:#fff;
+	z-index:10000;
+}
+.ks-dilog-title{
+	height: 40px;
+	line-height:40px;
+	border-bottom: 1px solid #E5E5E5;
+	background-color: #F3F3F3;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow:hidden;
+}
+.ks-dilog-title-move{
+	cursor:move;
+}
+.ks-dilog-title a{
+	float:right;
+	display:block;
+	width:9px;
+	height:9px;
+	background:url(../images/ui.icon1x.png) no-repeat;
+	margin-right:10px;
+	margin-top:15px;
+}
+.ks-dilog-title a:hover{
+	background-position:-9px 0;
+}
+.ks-dilog-title h4{
+	color: #4C4C4C;
+	font-size: 14px;
+	padding-left:10px;
+}
+.ks-dilog-title h4 i{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	margin-right:10px;
+	vertical-align:-4px;
+	*vertical-align:0;
+}
+.ks-dilog-content{
+	min-height:70px;
+	overflow:hidden;
+}
+.ks-dilog-content-loading{
+	background:url(../images/ui.loader1.gif) no-repeat center;
+}
+.ks-dilog-btn{
+	background-color: #F3F3F3;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding:5px 0;
+	font-size: 0;
+}
+.ks-dilog-btn-al{
+	text-align:left;
+}
+.ks-dilog-btn-ac{
+	text-align:center;
+}
+.ks-dilog-btn-ar{
+	text-align:right;
+}
+.ks-dilog-btn input{
+	display:inline-block;
+	width:60px;
+	height:28px;
+	line-height:28px;
+	border-radius:2px;
+	font-size:12px;
+	margin-right:5px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.ks-dilog-blue-btn{
+	background-color:#259ee5;
+	color:#fff;
+	border:1px solid #1489ce;
+}
+.ks-dilog-gray-btn{
+	background-color:#e6e6e6;
+	color:#414141;
+	border:1px solid #cdcdcd;
+}
+/*定制对话框，警告和确认*/
+.ks-dilog-alert i, .ks-dilog-confirm i{
+	float:left;
+	display:block;
+	width:42px;
+	height:42px;
+	background-image:url(../images/ui.icon1x.png);
+	background-repeat:no-repeat;
+	margin-top:10px;
+}
+.ks-dilog-alert i{
+	background-position:-88px -78px;
+}
+.ks-dilog-confirm i{
+	background-position:-141px -82px;
+}
+.ks-dilog-alert, .ks-dilog-confirm{
+	padding:15px 10px;
+}
+.ks-dilog-alert p, .ks-dilog-confirm p{
+	margin-left:60px;
+	line-height:22px;
+}
+.ks-poplayer{
+	max-width:480px;
+	background-color:#fafafa;
+	border:1px solid #d9d9d9;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.ks-poplayer i.ks-poplayer-arrow{
+	position:absolute;
+	display:block;
+	background-image:url(../images/ui.icon1x.png);
+	background-repeat:no-repeat;
+}
+.ks-position-top i.ks-poplayer-arrow, .ks-position-bottom i.ks-poplayer-arrow{
+	width:14px;
+	height:9px;
+}
+.ks-position-left i.ks-poplayer-arrow, .ks-position-right i.ks-poplayer-arrow{
+	width:9px;
+	height:14px;
+}
+.ks-position-top i.ks-poplayer-arrow{
+	left:50%;
+	bottom:-9px;
+	margin-left:-6px;
+	background-position:-106px -4px;
+}
+.ks-position-right i.ks-poplayer-arrow{
+	left:-8px;
+	top:50%;
+	margin-top:-6px;
+	background-position:-70px -2px;
+}
+.ks-position-bottom i.ks-poplayer-arrow{
+	left:50%;
+	top:-8px;
+	margin-left:-6px;
+	background-position:-90px -4px;
+}
+.ks-position-left i.ks-poplayer-arrow{
+	right:-9px;
+	top:50%;
+	margin-top:-6px;
+	background-position:-81px -2px;
+}
+.ks-poplayer-content{
+	padding:15px 10px;
+}

@@ -1,0 +1,45 @@
+<h2>日期时间</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+            <li class="de-catalog-header"><a href="#create">创建实例</a></li>
+            <li class="de-catalog-header"><a href="#formate">格式化字符串</a></li>
+        </ul>
+    </div>
+</div>
+<a id="create"></a>
+<div class="de-title">创建实例</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<span id="dateTime"></span>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+<pre><code class="javascript">//需要导入dateTime代码包
+var dateTime = new KDateTime({
+    //写入的DOM对象
+    wirteTimeObj : "dateTime",
+    //格式化字符串
+    formate : "YYYY-MM-DD hh:mm:ss W"
+});
+//初始化
+dateTime.init();
+//自动更新
+dateTime.autoUpdate();
+//禁用更新
+//dateTime.clearTimer();</code></pre>
+</div>
+<a id="formate"></a>
+<div class="de-subtitle">格式化字符串</div>
+<div class="de-demo-explain"><span>YYYY-MM-DD</span> 表示"年月日"字符串、可以使用"/"分隔，可选值"YYYY-MM-DD","YY-MM-DD","MM-DD"</div>
+<div class="de-demo-explain"><span>hh:mm:ss</span> 表示"时分秒"字符串、必须使用":"分隔，可选值"hh:mm:ss"和"h:m:s"</div>
+<div class="de-demo-explain"><span>W</span> 表示"星期"字符串</div>
+<script type="text/javascript" src="../../src/kissui.datetime.js"></script>
+<script language="javascript">
+	var dateTime = new KDateTime({
+		formate : "YYYY-MM-DD hh:mm:ss W"
+	});
+	dateTime.init();
+	dateTime.autoUpdate();
+</script>

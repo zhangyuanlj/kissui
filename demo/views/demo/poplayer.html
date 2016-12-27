@@ -1,0 +1,331 @@
+<h2>弹出层</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#base">基础样式</a></li>
+            <li class="de-catalog-header"><a href="#ksCreate">快速创建</a></li>
+            <li class="de-catalog-header"><a href="#dmCreate">代码创建</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.poplayer.css、kissui.dropdown.css--&gt;</code></pre>
+</div>
+<a id="base"></a>
+<div class="de-title">基础样式</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	 <div style="position:relative; height:110px;">
+         <div class="ks-poplayer ks-position-top">
+              <i class="ks-poplayer-arrow"></i>
+              <div class="ks-poplayer-content">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</div>
+          </div>
+      </div>
+      <div style="position:relative; height:110px;">
+        <div class="ks-poplayer ks-position-right">
+            <i class="ks-poplayer-arrow"></i>
+            <div class="ks-poplayer-content">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</div>
+        </div>
+     </div>
+    <div style="position:relative; height:110px;">
+        <div class="ks-poplayer ks-position-bottom">
+            <i class="ks-poplayer-arrow"></i>
+            <div class="ks-poplayer-content">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</div>
+        </div>
+    </div>
+    <div style="position:relative; height:110px;">
+        <div class="ks-poplayer ks-position-left">
+            <i class="ks-poplayer-arrow"></i>
+            <div class="ks-poplayer-content">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</div>
+        </div>
+    </div>
+    <div style="position:relative; height:260px;">
+        <div class="ks-dropdown" style="display:block;">
+            <ul>
+                <li class="ks-dropdown-item"><a href="#">Item</a></li>
+                <li class="ks-dropdown-item"><a href="#">Another item</a></li>
+                <li class="ks-dropdown-item"><strong class="ks-dropdown-disable">Header</strong></li>
+                <li class="ks-dropdown-item"><a href="#">Item</a></li>
+                <li class="ks-dropdown-item"><a href="#">Another item</a></li>
+                <li class="ks-dropdown-line"></li>
+                <li class="ks-dropdown-item"><a href="#">Separated item</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="de-subtitle">代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;--上方弹出层--&gt;
+&lt;div class="ks-poplayer ks-position-top"&gt;
+  &lt;i class="ks-poplayer-arrow"&gt;&lt;/i&gt;
+  &lt;div class="ks-poplayer-content"&gt;这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字&lt;/div&gt;
+&lt;/div&gt;
+&lt;--右侧弹出层--&gt;
+&lt;div class="ks-poplayer ks-position-right"&gt;
+    &lt;i class="ks-poplayer-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-poplayer-content"&gt;这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字&lt;/div&gt;
+&lt;/div&gt;
+&lt;--下方弹出层--&gt;
+&lt;div class="ks-poplayer ks-position-bottom"&gt;
+    &lt;i class="ks-poplayer-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-poplayer-content"&gt;这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字&lt;/div&gt;
+&lt;/div&gt;
+&lt;--左侧弹出层--&gt;
+&lt;div class="ks-poplayer ks-position-left"&gt;
+    &lt;i class="ks-poplayer-arrow"&gt;&lt;/i&gt;
+    &lt;div class="ks-poplayer-content"&gt;这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字&lt;/div&gt;
+&lt;/div&gt;
+&lt;--弹出菜单--&gt;
+&lt;div class="ks-dropdown" style="display:block;"&gt;
+    &lt;ul&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Item&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Another item&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;strong class="ks-dropdown-disable"&gt;Header&lt;/strong&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Item&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Another item&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-line"&gt;&lt;/li&gt;
+        &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Separated item&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<a id="ksCreate"></a>
+<div class="de-title">快速创建</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-button-wrap ks-button-dropdown" id="dropdown" type="ks-dropdown" data-target-obj="#dropdown" data-layer="#dropdown .ks-dropdown" data-width="200" data-location="top-right">
+      <a href="#" class="ks-button-a ks-button-primary">
+          <strong class="ks-btn-dp-strong">Link</strong>
+          <i class="ks-btn-dp-arr-i"></i>
+      </a>
+      <div class="ks-dropdown">
+        <ul>
+            <li class="ks-dropdown-item"><a href="#">Item</a></li>
+            <li class="ks-dropdown-item"><a href="#">Another item</a></li>
+            <li class="ks-dropdown-item"><strong class="ks-dropdown-disable">Header</strong></li>
+            <li class="ks-dropdown-item"><a href="#">Item</a></li>
+            <li class="ks-dropdown-item"><a href="#">Another item</a></li>
+            <li class="ks-dropdown-line"></li>
+            <li class="ks-dropdown-item"><a href="#">Separated item</a></li>
+        </ul>
+    </div>
+  </div>
+  <div id="poplayer" class="ks-button-wrap ks-button-dropdown" type="ks-dropdown" data-target-obj="#poplayer" data-layer="#poplayer .ks-poplayer" data-width="300" data-location="bottom">
+      <a href="#" class="ks-button-a ks-button-primary">
+          <strong class="ks-btn-dp-strong">Link</strong>
+          <i class="ks-btn-dp-arr-i"></i>
+      </a>
+      <div class="ks-poplayer ks-position-bottom">
+          <i class="ks-poplayer-arrow"></i>
+          <div class="ks-poplayer-content">
+          	<p style="font-size:12px; line-height:20px;">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</p>
+          </div>
+      </div>
+  </div>
+  <div class="ks-button-wrap" id="showMask">
+      <a href="javascripr:void(0);" class="ks-button-a ks-button-primary">遮罩层</a>
+  </div>
+  <div class="ks-clear-fl"></div>  
+</div>
+<div class="de-subtitle">HTML代码</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;div class="ks-button-wrap ks-button-dropdown" id="dropdown" type="ks-dropdown" data-target-obj="#dropdown" data-layer="#dropdown .ks-dropdown" data-width="200" data-location="top-right"&gt;
+      &lt;a href="#" class="ks-button-a ks-button-primary"&gt;
+          &lt;strong class="ks-btn-dp-strong"&gt;Link&lt;/strong&gt;
+          &lt;i class="ks-btn-dp-arr-i"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+      &lt;div class="ks-dropdown"&gt;
+        &lt;ul&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Item&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Another item&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;strong class="ks-dropdown-disable"&gt;Header&lt;/strong&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Item&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Another item&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-line"&gt;&lt;/li&gt;
+            &lt;li class="ks-dropdown-item"&gt;&lt;a href="#"&gt;Separated item&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="poplayer" class="ks-button-wrap ks-button-dropdown" type="ks-dropdown" data-target-obj="#poplayer" data-layer="#poplayer .ks-poplayer" data-width="300" data-location="bottom"&gt;
+      &lt;a href="#" class="ks-button-a ks-button-primary"&gt;
+          &lt;strong class="ks-btn-dp-strong"&gt;Link&lt;/strong&gt;
+          &lt;i class="ks-btn-dp-arr-i"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;div class="ks-poplayer ks-position-bottom"&gt;
+          &lt;i class="ks-poplayer-arrow"&gt;&lt;/i&gt;
+          &lt;div class="ks-poplayer-content"&gt;
+          	&lt;p style="font-size:12px; line-height:20px;"&gt;这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字&lt;/p&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+</div>
+<div class="de-subtitle">遮罩层JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">//动态创建遮罩层，需要导入maskLayer代码包
+$("#showMask").bind("click", function(){
+    var mask = new KMask({
+        onMaskLayerClick : function(KMask){
+            KMask.fadeOut(300, function(){
+                KMask.remove();
+            });
+        }
+    });
+    mask.fadeIn(500, function(){
+        mask.setOpacity(0.5);
+    });
+});</code></pre>
+</div>
+<div class="de-subtitle">HTML属性配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td>指定该控件要显示dropdown或者poplayer</td>
+        <td><span class="stress">必填（值为ks-dropdown）</span></td>
+    </tr>
+    <tr>
+        <td>data-target-obj</td>
+        <td>显示dropdown或者poplayer的容器ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>data-layer</td>
+        <td>dropdown或者poplayer的ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>data-width</td>
+        <td>dropdown或者poplayer的宽度</td>
+        <td>可选（默认值为240）</td>
+    </tr>
+    <tr>
+        <td>data-location</td>
+        <td>dropdown或者poplayer的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-show</td>
+        <td>是否默认就显示</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>data-trigger-mode</td>
+        <td>显示dropdown或者poplayer的事件名称</td>
+        <td>可选（值为mouseover或者mousedown）</td>
+    </tr>
+</table>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入position、dropDown、renderComp代码包*/
+KRenderComp.renderDropDown();</code></pre>
+</div>
+<a id="dmCreate"></a>
+<div class="de-title">代码创建</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div id="poplayer3" class="ks-button-wrap" style="float:left;">
+    	<a href="#" class="ks-button-a ks-button-primary">代码创建</a>
+        <div class="ks-poplayer ks-position-top layer-none">
+              <i class="ks-poplayer-arrow"></i>
+              <div class="ks-poplayer-content">
+                <p style="font-size:12px; line-height:20px;">这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字这里是对话框的大段文字</p>
+              </div>
+          </div>
+    </div>
+    <div class="ks-clear-fl"></div>  
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入position、dropDown代码包*/
+var poplayer3 = new KDropDown({
+    $targetObj : $("#poplayer3"),  
+    $layer : $("#poplayer3 .ks-poplayer"),
+    layerWidth : 310,
+    location : "top"
+});</code></pre>
+</div>
+<div class="de-subtitle">KDropDown配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>$targetObj</td>
+        <td>显示dropdown或者poplayer的容器ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>$layer</td>
+        <td>dropdown或者poplayer的ID</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>layerWidth</td>
+        <td>dropdown或者poplayer宽度</td>
+        <td>可选，默认值为240</td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td>dropdown或者poplayer显示的位置</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>show</td>
+        <td>是否默认就显示</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>triggerMode</td>
+        <td>显示dropdown或者poplayer的事件名称</td>
+        <td>可选（值为mouseover或者mousedown）</td>
+    </tr>
+</table>
+<div class="de-subtitle">KDropDown方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="120">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>layerShow</td>
+        <td>显示dropdown或者poplayer</td>
+    </tr>
+    <tr>
+        <td>layerHide</td>
+        <td>隐藏dropdown或者poplayer</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.dropdown.js"></script>
+<script type="text/javascript" src="../../src/kissui.masklayer.js"></script>
+<script type="text/javascript">
+	$(function(){
+		KRenderComp.renderDropDown();
+		var poplayer3 = new KDropDown({
+			$targetObj : $("#poplayer3"),  
+			$layer : $("#poplayer3 .ks-poplayer"),
+			layerWidth : 310,
+			location : "top"
+		});
+		$("#showMask").bind("click", function(){
+			var mask = new KMask({
+				onMaskLayerClick : function(KMask){
+					KMask.fadeOut(300, function(){
+						KMask.remove();
+					});
+				}
+			});
+			mask.fadeIn(500, function(){
+				mask.setOpacity(0.5);
+			});
+		});
+	});
+</script>

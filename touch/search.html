@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta http-equiv="Cache-Control" content="Cache" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>kissUi前端组件库-移动端</title>
+        <link type="text/css" rel="stylesheet" href="styles/kissui.core.css">
+        <script language="javascript">
+            window['viewportConfig'] = {
+                designWidth: 1080, 
+                designFontSize: 40
+            };
+        </script>
+        <script type="text/javascript" src="../plugin/viewport/viewport.js"></script>
+    </head>
+    <body style="padding-top:4rem;">
+        <div class="ks-head-fixed">
+            <div class="ks-head">
+                <div class="left">
+                    <a href="index.html" id="goBack" class="icon return"></a>
+                </div>
+<!--                 <div class="right">
+                    <div class="btn-text last">取消</div>
+                </div> -->
+                <div class="text">
+                    <h4>搜索</h4>
+                </div>
+            </div>
+        </div>
+        <!--默认搜索-->
+        <div class="ks-search">
+            <div class="ks-search-input">
+                <i class="search-icon"></i>
+                <div class="search-text">请输入搜索关键字</div>
+            </div>
+        </div>
+        <br>
+        <!--带取消的搜索-->
+        <div class="ks-search">
+            <div class="ks-search-input">
+                <i class="search-icon"></i>
+                <input type="text" name="searchKey" id="searchKey" placeholder="请输入搜索关键字">
+                <a href="javascript:void(0);" class="clear"></a>
+            </div>
+            <a href="javascript:void(0);" class="cancel">取消</a>
+        </div>
+        <br>
+        <!--带按钮的搜索-->
+        <div class="ks-search">
+            <div class="ks-search-input">
+                <i class="search-icon"></i>
+                <input type="text" name="searchKey" id="searchKey" placeholder="请输入搜索关键字">
+                <a href="javascript:void(0);" class="clear"></a>
+            </div>
+            <button class="ks-btn ks-btn-confirm">确定</button>
+        </div>
+    </body>
+</html>

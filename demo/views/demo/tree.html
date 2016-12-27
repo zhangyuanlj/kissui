@@ -1,0 +1,193 @@
+<style type="text/css">
+	.treeview-icon1	{
+		background:url(../../web/images/test/jingoal_newtree.png) no-repeat -5px -17px;
+	}
+	.treeview-icon2	{
+		background:url(../../web/images/test/jingoal_newtree.png) no-repeat -27px -18px;
+	}
+	.treeview-icon3	{
+		background:url(../../web/images/test/jingoal_newtree.png) no-repeat -68px -17px;
+	}
+</style>
+<h2>树形控件</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#create">创建实例</a></li>
+            <li class="de-catalog-header"><a href="#option">配置说明</a></li>
+            <li class="de-catalog-header"><a href="#function">KTreeView方法</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.treeview.css--&gt;</code></pre>
+</div>
+<a id="create"></a>
+<div class="de-title">创建实例</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+    <a href="javascript:void(0);" id="expandAll" style="color:#0e90d2;">展开所有节点</a>
+    <a href="javascript:void(0);" id="toggle" style="color:#0e90d2;">切换树的状态</a>
+    <a href="javascript:void(0);" id="show" style="color:#0e90d2;">展开</a>
+    <a href="javascript:void(0);" id="hide" style="color:#0e90d2;">关闭</a>
+	<div id="treeWrapper"></div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">/*需要导入treeview代码包*/
+var treeview = new KTreeView({
+  action : {
+      init : "treeview.php",
+      getChild : "treeview.php"
+  },
+  nodeCallback : function(nodeValue){
+      console.log(nodeValue);
+      console.log(treeview.getCheckedNodes());
+      console.log(treeview.getSelectNode());
+      treeview.refreshNode(nodeValue.id, "treeview.php?id=90");
+  }
+});
+$("#expandAll").click(function(){
+    treeview.expandAll();
+});
+$("#toggle").click(function(){
+    treeview.toggle();
+});
+$("#show").click(function(){
+    treeview.toggle("show");
+});
+$("#hide").click(function(){
+    treeview.toggle("hide");
+});</code></pre>
+</div>
+<div class="de-subtitle">PHP代码</div>
+<div class="de-demo-code">
+   请参考示例views目录下的treeview.php
+</div>
+<a id="option"></a>
+<div class="de-subtitle">配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>$parent</td>
+        <td>插入树菜单的节点</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>keyName</td>
+        <td>参数名称</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>action.init</td>
+        <td>初始化地址</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>action.getChild</td>
+        <td>获取子节点地址</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>expandAll</td>
+        <td>是否自动展开全部节点</td>
+        <td>可选,默认不展开</td>
+    </tr>
+    <tr>
+        <td>loadingCallback</td>
+        <td>请求数据时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>successCallback</td>
+        <td>每个节点加载完成时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>expandCallback</td>
+        <td>展开树时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>nodeCallback</td>
+        <td>点击节点时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>checkedCallback</td>
+        <td>通过复选框选中节点时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>unCheckedCallback</td>
+        <td>通过复选框撤销选中时执行的回调函数</td>
+        <td>可选</td>
+    </tr>
+</table>
+<a id="function"></a>
+<div class="de-subtitle">KTreeView方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="270">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>refreshNode(integer nodeId, string action)</td>
+        <td>刷新树的某个节点</td>
+    </tr>
+    <tr>
+        <td>expandAll()</td>
+        <td>手动展开全部节点</td>
+    </tr>
+    <tr>
+        <td>toggle(display)</td>
+        <td>切换树的状态,不传值自动根据当前状态切换;传入show字符串展开树;传入hide字符串关闭树;</td>
+    </tr>
+    <tr>
+        <td>getSelectNode()</td>
+        <td>获取选中的节点</td>
+    </tr>
+    <tr>
+        <td>getCheckedNodes()</td>
+        <td>获取复选框选中的节点</td>
+    </tr>
+    <tr>
+        <td>destroy</td>
+        <td>销毁树目录</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.treeview.js"></script>
+<script language="javascript">
+	var treeview = new KTreeView({
+		action : {
+			init : "treeview.php",
+			getChild : "treeview.php"
+		},
+        nodeCallback : function(nodeValue){
+			console.log(nodeValue);
+			console.log(treeview.getCheckedNodes());
+			console.log(treeview.getSelectNode());
+			treeview.refreshNode(nodeValue.id, "treeview.php?id=90");
+		}
+	});
+    $("#expandAll").click(function(){
+        treeview.expandAll();
+    });
+    $("#toggle").click(function(){
+        treeview.toggle();
+    });
+    $("#show").click(function(){
+        treeview.toggle("show");
+    });
+    $("#hide").click(function(){
+        treeview.toggle("hide");
+    });
+</script>

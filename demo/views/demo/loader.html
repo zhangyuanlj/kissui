@@ -1,0 +1,80 @@
+<h2>加载器</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+          <li class="de-catalog-header"><a href="#progress">进度条调用实例</a></li>
+          <li class="de-catalog-header"><a href="#loaderExample">加载器调用实例</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.loader.css--&gt;</code></pre>
+</div>
+<a id="progress"></a>
+<div class="de-title">进度条调用实例</div>
+<div class="de-demo-wrap">
+	 <div class="ks-button-wrap">
+        <button type="button" id="progressStart" class="ks-button-input ks-button-primary">开始</button>
+        <button type="button" id="progressDone" class="ks-button-input ks-button-success">完成</button>
+        <button type="button" id="getProgressStatus" class="ks-button-input ks-button-danger">当前加载状态</button>
+        <a href="javascript:void(0);" id="setProgress" class="ks-button-a ks-button-success">设置加载50%</a>
+        <a href="javascript:void(0);" id="destroyProgress" class="ks-button-a ks-button-primary">销毁</a>
+    </div>
+</div>
+<a id="loaderExample"></a>
+<div class="de-title">加载器调用实例</div>
+<div class="de-demo-wrap">
+   <div class="ks-button-wrap">
+        <button type="button" id="loaderShow" class="ks-button-input ks-button-primary">显示加载器</button>
+    </div>
+</div>
+<script type="text/javascript" src="../../src/kissui.progressbar.js"></script>
+<script type="text/javascript" src="../../src/kissui.loader.js"></script>
+<script type="text/javascript">
+	$(function(){
+      var progressBar = new KProgressBar({
+          callback : function(){
+             alert("加载成功");
+          }
+      });
+      progressBar.init();
+      var loader = new KLoader({
+          callback : function(){
+             alert("加载器隐藏了");
+          }
+      });
+      loader.init();
+      $("#progressStart").click(function() {
+           if(progressBar.getProgressBar() == null){
+              progressBar.init();
+           }
+           progressBar.clearLoaderTimer();
+           progressBar.start();
+      }); 
+      $("#progressDone").click(function() {
+           progressBar.done();
+      }); 
+      $("#getProgressStatus").click(function() {
+           $(this).html("当前状态"+ progressBar.getStatus());
+      }); 
+      $("#setProgress").click(function() {
+           progressBar.clearLoaderTimer();
+           progressBar.updateProgress(0.5, function(progressValue){         
+              console.log(progressValue);
+           });
+      }); 
+      $("#destroyProgress").click(function() {
+           progressBar.destroy();
+      });
+      $("#loaderShow").click(function() {
+           loader.show();
+      });
+      $("#loader").on("click", function() {
+           loader.hide();
+      });
+	});
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta http-equiv="Cache-Control" content="Cache" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>kissUi前端组件库-移动端</title>
+        <link type="text/css" rel="stylesheet" href="styles/kissui.core.css">
+        <style type="text/css">
+            body{
+                background-color: #efefef;
+                padding-top: 4rem;
+            }
+        </style>
+        <script language="javascript">
+            window['viewportConfig'] = {
+                designWidth: 1080, 
+                designFontSize: 40
+            };
+        </script>
+        <script type="text/javascript" src="../plugin/viewport/viewport.js"></script>
+    </head>
+    <body>
+        <div class="ks-head-fixed">
+            <div class="ks-head">
+                <div class="left">
+                    <a href="index.html" id="goBack" class="icon return"></a>
+                </div>
+<!--                 <div class="right">
+                    <div class="btn-text last">取消</div>
+                </div> -->
+                <div class="text">
+                    <h4>按钮</h4>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 2rem 1.8rem;">
+            <!--普通按钮-->
+            <button class="ks-btn ks-btn-confirm">确定</button>
+            <br>
+            <button class="ks-btn ks-btn-cancel">取消</button>
+            <br>
+            <button class="ks-btn ks-btn-warn">警告按钮</button>
+            <br>
+            <!--通栏按钮-->
+            <div class="ks-btn-full">
+                <button class="ks-btn ks-btn-confirm">确定</button>
+                <br>
+                <button class="ks-btn ks-btn-cancel">取消</button>
+                <br>
+                <button class="ks-btn ks-btn-warn">警告按钮</button>
+            </div>
+            <br>
+            <!--两个按钮并排-->
+            <div class="ks-btn-group">
+                <button class="ks-btn ks-btn-confirm">确定</button>
+                <button class="ks-btn ks-btn-cancel">取消</button>
+            </div>
+            <br>
+            <!--底部按钮组-->
+            <div class="ks-btn-group-bottom">
+                <button class="ks-btn">确定</button>
+                <button class="ks-btn">取消</button>
+            </div>
+            <div class="ks-btn-group-bottom">
+                <button class="ks-btn">确定</button>
+            </div>
+        </div>
+    </body>
+</html>

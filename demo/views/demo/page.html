@@ -1,0 +1,234 @@
+<h2>分页控件</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
+            <li class="de-catalog-header"><a href="#create">创建实例</a></li>
+            <li class="de-catalog-header"><a href="#ajax">带列表的异步分页控件</a></li>
+            <li class="de-catalog-header"><a href="#option">配置说明</a></li>
+            <li class="de-catalog-header"><a href="#function">KPage方法</a></li>
+        </ul>
+    </div>
+</div>
+<a id="css"></a>
+<div class="de-title">CSS样式包</div>
+<div class="de-demo-code">
+	<pre><code class="html">&lt;!--kissui.page.css--&gt;</code></pre>
+</div>
+<a id="create"></a>
+<div class="de-title">创建实例</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-page">
+        <span class="prev">< 上一页</span> 
+        <span class="current">1</span>
+        <a href="javascript:;" class="num">2</a>
+        <a href="javascript:;" class="num">3</a>
+        <a href="javascript:;" class="num">4</a>
+        <a href="javascript:;" class="num">5</a>
+        <a href="javascript:;" class="num">6</a>
+        <span class="more">...</span>
+        <a href="javascript:;" class="num">10</a> 
+        <a href="javascript:;" class="next">下一页 ></a>
+    </div>
+</div>
+<div class="de-subtitle">HTML代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">&lt;div class="ks-page"&gt;
+    &lt;span class="prev"&gt;&lt; 上一页&lt;/span&gt; 
+    &lt;span class="current"&gt;1&lt;/span&gt;
+    &lt;a href="javascript:;" class="num"&gt;2&lt;/a&gt;
+    &lt;a href="javascript:;" class="num"&gt;3&lt;/a&gt;
+    &lt;a href="javascript:;" class="num"&gt;4&lt;/a&gt;
+    &lt;a href="javascript:;" class="num"&gt;5&lt;/a&gt;
+    &lt;a href="javascript:;" class="num"&gt;6&lt;/a&gt;
+    &lt;span class="more"&gt;...&lt;/span&gt;
+    &lt;a href="javascript:;" class="num"&gt;10&lt;/a&gt; 
+    &lt;a href="javascript:;" class="next"&gt;下一页 &gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<a id="ajax"></a>
+<div class="de-subtitle">带列表的异步分页控件</div>
+<div class="de-demo-wrap">
+    <div id="news_list"></div>
+    <div id="loading">正在加载中...</div>
+    <div class="ks-page-cen" style="margin-top:20px;">
+        <div id="pageHtml" class="ks-page"></div>
+   </div>
+   <div class="ks-clear-fl"></div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">//加载列表，需要导入page代码包
+var pageSize = 2;
+var page = new KPage({
+    insertObj : "#pageHtml",
+    openInfor : false,  
+    pageCount : 6,
+    pageSize : pageSize,
+     callback : function(){
+        loadList();
+    }
+});
+page.init();
+loadList();
+//加载列表
+function loadList(){
+    var resultHtml = [];
+    var pageNum = page.getPageNum();
+    $.ajax({
+        type : "GET",
+        url : "news.php",
+        data:"page=" + pageNum + "&pageSize=" + pageSize,
+        cache:false,
+        beforeSend:function(){
+            $("#loading").show();
+        },
+        success: function(xml){
+            $("#loading").hide()
+            var listTag = "items";
+            var dataNum = parseInt($(xml).find("dataNum").text());
+            var dataLength = $(xml).find(listTag).length;
+            for(var i = 0; i < dataLength; i++){
+                var title = $(xml).find(listTag + ":eq(" + i +") title").text();
+                resultHtml.push("&lt;p&gt;"+title+"&lt;/p&gt;");
+            }
+            $("#news_list").html(resultHtml.join("\n"));
+            page.dataNum = dataNum;
+            page.updatePage();
+        },
+        error:function(){
+            $("#loading").hide()
+            alert("加载数据失败,请稍后...");
+        }
+    });
+}</code></pre>
+</div>
+<a id="option"></a>
+<div class="de-subtitle">配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>insertObj</td>
+        <td>插入分页的目标对象</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>pageSize</td>
+        <td>每页显示多少条记录</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>pageCount</td>
+        <td>每段显示的页码</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>offsetPage</td>
+        <td>页码偏移数</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>prevText</td>
+        <td>上一页链接文字</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>nextText</td>
+        <td>下一页链接文字</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>openInfor</td>
+        <td>是否开启详细信息</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>callback</td>
+        <td>前往目标页码执行的回调函数</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+</table>
+<a id="function"></a>
+<div class="de-subtitle">KPage方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="470">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>init</td>
+        <td>初始化</td>
+    </tr>
+    <tr>
+        <td>getPageNum</td>
+        <td>获取当前页码</td>
+    </tr>
+    <tr>
+        <td>goPrev</td>
+        <td>上一页</td>
+    </tr>
+    <tr>
+        <td>goNext</td>
+        <td>下一页</td>
+    </tr>
+    <tr>
+        <td>goTargetPage(integer pageNum)</td>
+        <td>跳转到指定的页码</td>
+    </tr>
+    <tr>
+        <td>updatePage</td>
+        <td>更新分页控件</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.page.js"></script>
+<script language="javascript">
+    var pageSize = 2;
+    var page = new KPage({
+        insertObj : "#pageHtml",
+        openInfor : false,  
+        pageCount : 6,
+        pageSize : pageSize,
+        callback : function(){
+            loadList();
+        }
+    });
+    page.init();
+    loadList();
+	//加载列表
+	function loadList(){
+		var resultHtml = [];
+        var pageNum = page.getPageNum();
+		$.ajax({
+			type : "GET",
+			url : "news.php",
+			data:"page=" + pageNum + "&pageSize=" + pageSize,
+			cache:false,
+			beforeSend:function(){
+				$("#loading").show();
+			},
+			success: function(xml){
+				$("#loading").hide()
+				var listTag = "items";
+				var dataNum = parseInt($(xml).find("dataNum").text());
+				var dataLength = $(xml).find(listTag).length;
+				for(var i = 0; i < dataLength; i++){
+					var title = $(xml).find(listTag + ":eq(" + i +") title").text();
+					resultHtml.push("<p>" + title + "</p>");
+				}
+				$("#news_list").html(resultHtml.join("\n"));
+                page.dataNum = dataNum;
+                page.updatePage();
+			},
+			error:function(){
+				$("#loading").hide()
+				alert("加载数据失败,请稍后...");
+			}
+		});
+	}
+</script>

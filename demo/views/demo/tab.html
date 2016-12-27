@@ -1,0 +1,277 @@
+<style type="text/css">
+	.tab{
+		width:320px;
+		border:1px solid #bdd7f2;
+		border-top:0px;
+	}
+	.tab_title{
+		height:32px;
+		line-height:32px;
+		font-size:14px;
+		background:url(../../web/images/test/tab_title_bg.png) no-repeat;
+		overflow:hidden;
+	}
+	.tab_title li{
+		float:left;
+		background:url(../../web/images/test/tab_title_no_select_bg.png) no-repeat right bottom;
+	}
+	.tab_title li a, .tab_title li a:visited{
+		display:block;
+		padding:0 20px;
+		color:#000;
+	}
+	.tab_title li.current{
+		border-top:2px solid #458fce;
+		border-right:1px solid #bdd7f2;
+		background:#fff none;
+	}
+	.tab_content{
+		padding:15px 0;
+		margin:0 auto;
+		width:300px;
+		position:relative;
+		overflow:hidden;
+	}
+	.tab_content_scroll{
+		width:18000px;
+		position:absolute;
+		left:0px;
+		top:15px;
+	}
+	.tab_content_scroll img{
+		display:block;
+		float:left;
+		width:300px;
+		height:300px;
+	}
+	.tab_loading{
+		height:30px;
+		line-height:30px;
+		background:url(../../web/images/ui.loader.gif) no-repeat left center;
+		padding-left:20px;
+		display:none;
+	}
+</style>
+<h2>分页控件</h2>
+<div class="de-catalog">
+    <div class="de-catalog-title"><h3>目录</h3></div>
+    <div class="de-toc-bd">
+        <ul class="de-toc">
+        	<li class="de-catalog-header"><a href="#demo1">普通实例</a></li>
+            <li class="de-catalog-header"><a href="#demo2">自动播放</a></li>
+            <li class="de-catalog-header"><a href="#demo3">添加删除TAB</a></li>
+            <li class="de-catalog-header"><a href="#option">配置说明</a></li>
+            <li class="de-catalog-header"><a href="#function">KTab方法</a></li>
+        </ul>
+    </div>
+</div>
+<a id="demo1"></a>
+<div class="de-title">普通实例</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="tab">
+        <ul class="tab_title">
+            <li class="current"><a href="#">标题1</a></li>
+            <li><a href="#">标题2</a></li>
+        </ul>
+        <div class="tab_content">
+            <div>内容1</div>
+            <div class="ks-layer-none">内容2</div>
+        </div>
+    </div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">var tab1 = new KTab({
+    $tabTitle : $(".tab:eq(0) li"),
+    $tabCon : $(".tab_content:eq(0) div"),
+    selectStyle : "current",
+    triggerEvent : "mouseover"
+});</code></pre>
+</div>
+<a id="demo2"></a>
+<div class="de-title">自动播放</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="tab">
+          <ul class="tab_title">
+              <li class="current"><a href="#">标题1</a></li>
+              <li><a href="#">标题2</a></li>
+              <li><a href="#">标题3</a></li>
+              <li><a href="#">标题4</a></li>
+          </ul>
+          <div class="tab_content">
+              <div>内容1</div>
+              <div class="ks-layer-none">内容2</div>
+              <div class="ks-layer-none">内容3</div>
+              <div class="ks-layer-none">内容4</div>
+          </div>
+      </div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">var tab2 = new KTab({
+    $tabTitle : $(".tab:eq(2) li"),
+    $tabCon : $(".tab_content:eq(2) div"),
+    selectStyle : "current",
+    selectIndex : 3,
+    triggerEvent : "mouseover",
+    slideEnabled : true
+});</code></pre>
+</div>
+<a id="demo3"></a>
+<div class="de-title">添加删除TAB</div>
+<div class="de-subtitle">实例</div>
+<div class="de-demo-wrap">
+	<div class="ks-button-wrap">
+        <a href="javascript:void(0);" id="addTab" class="ks-button-a">添加</a>
+        <button type="button" id="deleteTab" class="ks-button-input ks-button-primary">删除</button>
+    </div>
+    <div class="tab" style="margin-top:15px;">
+          <ul class="tab_title">
+              <li class="current"><a href="#">标题1</a></li>
+              <li><a href="#">标题2</a></li>
+          </ul>
+          <div class="tab_content">
+              <div>内容1</div>
+              <div class="ks-layer-none">内容2</div>
+          </div>
+    </div>
+</div>
+<div class="de-subtitle">JS代码</div>
+<div class="de-demo-code">
+	<pre><code class="javascript">//添加TAB
+$("#addTab").bind("click", function(){
+    if($(".tab:eq(2) li").length < 4){
+        tab3.addTab({
+            tabTitle : $(".tab:eq(2) li").eq(0).clone(),
+            tabCon : $(".tab_content:eq(2) div").eq(0).clone()
+        });
+    }
+});
+//删除TAB
+$("#deleteTab").bind("click", function(){
+    if($(".tab:eq(2) li").length > 2){
+        tab3.deleteTab($(".tab:eq(2) li").length-1);
+    }
+});</code></pre>
+</div>
+<a id="option"></a>
+<div class="de-subtitle">配置说明</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>是否必填</th>
+    </tr>
+    <tr>
+        <td>$tabTitle</td>
+        <td>标签标题</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>$tabCon</td>
+        <td>标签内容</td>
+        <td><span class="stress">必填</span></td>
+    </tr>
+    <tr>
+        <td>selectIndex</td>
+        <td>选中TAB的索引</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>selectStyle</td>
+        <td>选中TAB的样式名称</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>triggerEvent</td>
+        <td>触发切换的事件（click或者mouseover）</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>slideEnabled</td>
+        <td>是否自动切换</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>slideInterval</td>
+        <td>切换时间间隔</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>slideDelay</td>
+        <td>下一次切换间隔</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>autoInit</td>
+        <td>是否自动初始化</td>
+        <td>可选</td>
+    </tr>
+    <tr>
+        <td>onShow(KTab, $selectTab, $selectCon)</td>
+        <td>每次切换完成后的回到函数</td>
+        <td>可选</td>
+    </tr>
+</table>
+<a id="function"></a>
+<div class="de-subtitle">KTab方法</div>
+<table class="de-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <th width="160">方法名</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td>init</td>
+        <td>初始化Tab</td>
+    </tr>
+    <tr>
+        <td>selectTab(selectIndex)</td>
+        <td>选中标签</td>
+    </tr>
+    <tr>
+        <td>addTab(tab)</td>
+        <td>添加标签</td>
+    </tr>
+    <tr>
+        <td>deleteTab(selectIndex)</td>
+        <td>删除标签</td>
+    </tr>
+</table>
+<script type="text/javascript" src="../../src/kissui.tab.js"></script>
+<script language="javascript">
+	var tab1 = new KTab({
+		$tabTitle : $(".tab:eq(0) li"),
+		$tabCon : $(".tab_content:eq(0) div"),
+		selectStyle : "current",
+		triggerEvent : "mouseover"
+	});
+	var tab2 = new KTab({
+		  $tabTitle : $(".tab:eq(1) li"),
+		  $tabCon : $(".tab_content:eq(1) div"),
+		  selectStyle : "current",
+		  selectIndex : 3,
+		  triggerEvent : "mouseover",
+		  slideEnabled : true
+	});
+	var tab3 = new KTab({
+		$tabTitle : $(".tab:eq(2) li"),
+		$tabCon : $(".tab_content:eq(2) div"),
+		selectStyle : "current",
+		triggerEvent : "mouseover"
+	});
+	$("#addTab").bind("click", function(){
+		if($(".tab:eq(2) li").length < 4){
+			tab3.addTab({
+				tabTitle : $(".tab:eq(2) li").eq(0).clone(),
+				tabCon : $(".tab_content:eq(2) div").eq(0).clone()
+			});
+		}
+	});
+	$("#deleteTab").bind("click", function(){
+		if($(".tab:eq(2) li").length > 2){
+			tab3.deleteTab($(".tab:eq(2) li").length-1);
+		}
+	});
+</script>

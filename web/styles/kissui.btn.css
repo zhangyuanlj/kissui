@@ -1,0 +1,226 @@
+/*
+ * 按钮
+ * author:张渊
+ * modifyTime:2015-11-6
+ */
+.ks-button-wrap, .ks-button-dropdown .ks-button-a, .ks-button-dropdown .ks-button-input{
+	font-size:0;
+}
+.ks-button-a, .ks-button-input{
+	display:inline-block;
+	color:#666;
+	font-size:12px;
+	background-color: #f7f7f7;
+	border: 1px solid #c7c7c7;
+  	border-bottom-color: #b1b1b1;
+	background-image: -webkit-linear-gradient(top, #fff, #eee);
+ 	background-image: linear-gradient(to bottom, #fff, #eee);
+    border-radius: 4px;
+	padding:0 10px;
+	vertical-align:middle;
+	cursor: pointer;
+	overflow: visible;
+	margin-right:5px;
+}
+.ks-button-a{
+	height:30px;
+	line-height:30px;
+}
+.ks-button-input{
+	height:32px;
+	line-height:28px;
+}
+.ks-btn-act, .ks-button-a:hover, .ks-button-input:hover{
+	background-color:#fafafa;
+	color:#666;
+	background-image:none;
+}
+.ks-button-disabled, .ks-button-disabled:hover, .ks-button-input:disabled, .ks-button-input:disabled:hover{
+	background-color: #fafafa;
+    color: #999;
+    border-color: #c7c7c7;
+    background-image: none;
+    box-shadow: none;
+	cursor:default;
+}
+/*尺寸：迷你*/
+.ks-button-mini .ks-button-a, .ks-button-mini .ks-button-input{
+	padding:0 6px;
+}
+.ks-button-mini .ks-button-a{
+	height:24px;
+	line-height:24px;
+}
+.ks-button-mini .ks-button-input{
+	height:26px;
+	line-height:22px;
+}
+/*尺寸：小*/
+.ks-button-small .ks-button-a, .ks-button-small .ks-button-input{
+	padding:0 8px;
+}
+.ks-button-small .ks-button-a{
+	height:26px;
+	line-height:26px;
+}
+.ks-button-small .ks-button-input{
+	height:28px;
+	line-height:24px;
+}
+/*尺寸：大*/
+.ks-button-large .ks-button-a, .ks-button-large .ks-button-input{
+	padding:0 20px;
+}
+.ks-button-large .ks-button-a{
+	height:34px;
+	line-height:34px;
+}
+.ks-button-large .ks-button-input{
+	height:36px;
+	line-height:32px;
+}
+/*尺寸：满屏*/
+.ks-button-full a, .ks-button-full button{
+	width:100%;
+	padding:5px 0;
+	margin:0;
+	margin-top:5px;
+	text-align:center;
+}
+/*重要*/
+.ks-button-primary{
+	background-color: #009dd8;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top, #00b4f5, #008dc5);
+    background-image: linear-gradient(to bottom, #00b4f5, #008dc5);
+    border-color: #0088ba;
+    border-bottom-color: #005475;
+}
+.ks-btn-pry-act, .ks-button-primary:hover{
+	background-color:#00aff2;
+	color:#fff;
+	background-image:none;
+}
+/*成功*/
+.ks-button-success{
+	background-color: #82bb42;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top,#9fd256,#6fac34);
+  	background-image: linear-gradient(to bottom,#9fd256,#6fac34);
+    border-color: #7ea744;
+    border-bottom-color: #42661f;
+}
+.ks-btn-suc-act, .ks-button-success:hover{
+	background-color:#8fce48;
+	color:#fff;
+	background-image:none;
+}
+/*危险*/
+.ks-button-danger{
+	background-color: #d32c46;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top,#ee465a,#c11a39);
+    background-image: linear-gradient(to bottom,#ee465a,#c11a39);
+    border-color: #bd3747;
+    border-bottom-color: #731022;
+}
+.ks-btn-dgr-act, .ks-button-danger:hover{
+	background-color:#e33551;
+	color:#fff;
+	background-image:none;
+}
+.ks-button-link{
+	color: #1d8acb;
+	border: none;
+    background: none;
+    box-shadow: none;
+}
+.ks-btn-link-act, .ks-button-link:hover{
+	color: #1d8acb;
+	background:none;
+	text-decoration:underline;
+}
+/*对齐方式*/
+.ks-button-center{
+	text-align:center;
+}
+.ks-button-right{
+	text-align:right;
+}
+/*按钮组*/
+.ks-button-group .ks-button-a, .ks-button-group .ks-button-input{
+	margin:0px;
+	border-radius:0px;
+	margin-left:-1px;
+}
+.ks-button-group a.ks-button-group-first, .ks-button-group button.ks-button-group-first{
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+}
+.ks-button-group a.ks-button-group-last, .ks-button-group button.ks-button-group-last{
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+/*图标按钮*/
+.ks-button-icon-i{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	*margin-right:5px;
+	vertical-align:middle;
+}
+/*弹出菜单按钮*/
+.ks-button-dropdown{
+	float:left;
+	height:1%; 
+	overflow:hidden;
+}
+.ks-button-dropdown .ks-button-a, .ks-button-dropdown .ks-button-input{
+	padding-right:0px;
+}
+.ks-btn-dp-strong{
+	display:inline-block;
+	font-size:12px;
+	font-weight:100;
+	border-right:1px solid #b1b1b1;
+	padding-right:10px;
+}
+.ks-button-mini .ks-btn-dp-strong{
+	padding-right:6px;
+}
+.ks-button-small .ks-btn-dp-strong{
+	padding-right:8px;
+}
+.ks-button-large .ks-btn-dp-strong{
+	padding-right:20px;
+}
+.ks-button-primary .ks-btn-dp-strong{
+	border-right:1px solid #0088ba;
+}
+.ks-button-success .ks-btn-dp-strong{
+	border-right:1px solid #42661f;
+}
+.ks-button-danger .ks-btn-dp-strong{
+	border-right:1px solid #731022;
+}
+.ks-btn-dp-arr-i{
+	display:inline-block;
+	border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+	border-top:4px solid #333;
+	margin:0 10px;
+	vertical-align:2px;
+	*vertical-align:-13px;
+}
+.ks-button-mini .ks-btn-dp-arr-i, .ks-button-small .ks-btn-dp-arr-i{
+	*vertical-align:-11px;
+}
+.ks-button-large .ks-btn-dp-arr-i{
+	*vertical-align:-16px;
+}
+.ks-button-disabled .ks-btn-dp-arr-i, .ks-button-input:disabled .ks-btn-dp-arr-i{
+	border-top:4px solid #666;
+}
+.ks-button-primary .ks-btn-dp-arr-i, .ks-button-success .ks-btn-dp-arr-i, .ks-button-danger .ks-btn-dp-arr-i{
+	border-top:4px solid #fff;
+}

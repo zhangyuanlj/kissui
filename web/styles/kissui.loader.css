@@ -1,0 +1,49 @@
+/*
+ * 加载器
+ * author:张渊
+ * modifyTime:2016-10-11
+ */
+.ks-loader{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+	display: none;
+}
+.ks-loader-bg{
+	height: 100%;
+	background-color: #fff;
+}
+.ks-loader-con{
+	position: fixed;
+	width: 300px;
+	height: 90px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -45px;
+}
+.ks-loader-icon{
+	width: 32px;
+	height: 32px;
+	background:url(../images/ui.loader2.gif) no-repeat;
+	margin:0 auto;
+}
+.ks-loader-text{
+	color:#000;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 100;
+	margin-top: 10px;
+}
+.ks-progress-bar{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 2px;
+	background-color: #5eb95e;
+	z-index: 2000;
+	display: none;
+}

@@ -1,0 +1,46 @@
+/*颜色输入框*/
+input.input_color {
+	width:18px;
+	height:18px;
+	padding:0;
+	border:none;
+	background:#000 url(../img/color_picker.png) no-repeat;
+	font-size:0;
+	line-height:0;
+	vertical-align:middle;
+	cursor:pointer;
+}
+/*颜色选择器*/ 
+.html_colorpane {
+	display:none;
+	position:absolute;
+	z-index:1001;
+}
+.html_colorpane h5 {
+	width:220px;
+	padding:0 5px;
+	border:1px solid #000;
+	border-bottom:none;
+	background:#fff;
+	color:#999;
+	font:normal 12px/20px "\5B8B\4F53";
+	cursor:pointer;
+}
+.html_colorpane h5:hover {
+	color:#333;
+}
+.html_colorpane table {
+	border-collapse:collapse;
+	table-layout:fixed;
+	empty-cells:show;
+}
+.html_colorpane td {
+	position:static;
+	width:10px;
+	height:10px;
+	padding:0;
+	border:1px solid #000;
+	font-size:0;
+	line-height:0;
+	cursor:pointer;
+}

@@ -1,0 +1,127 @@
+/*
+ * 日期时间选择器
+ * author:张渊
+ * modifyTime:2015-11-11
+ */
+.ks-date-picker{
+	position:relative;
+	width:210px;
+	background-color:#fff;
+	font-size:12px;
+}
+.ks-date-picker-pop{
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-radius:2px;
+	box-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+	z-index:10000;
+}
+.ks-date-picker-hd{
+	height:40px;
+	overflow:hidden;
+}
+.ks-date-picker-hd a{
+	display:block;
+	width:24px;
+	height:18px;
+	margin-top:11px;
+	background-image:url(../images/ui.icon1x.png);
+	background-repeat:no-repeat;
+}
+.ks-date-picker-hd a.prev{
+	float:left;
+	background-position:-157px -3px;
+}
+.ks-date-picker-hd a.prev:hover{
+	background-position:-119px -3px;
+}
+.ks-date-picker-hd a.next{
+	float:right;
+	background-position:-178px -3px;
+}
+.ks-date-picker-hd a.next:hover{
+	background-position:-138px -3px;
+}
+.ks-date-picker-hd h4{
+	margin:0 30px;
+	text-align:center;
+	line-height:40px;
+	color:#000;
+	font-size:12px;
+}
+.ks-date-picker-hd h4 strong{
+	font-weight:bold;
+	cursor:default;
+}
+.ks-date-picker th, .ks-date-picker td{
+	width:30px;
+	height:30px;
+}
+.ks-date-picker th{
+	color:#4a4c4e;
+	font-weight:100;
+}
+.ks-date-picker td a, .ks-date-picker td a:visited{
+	display:block;
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	color: #616366;
+	border:1px solid #fff;
+	border-radius:20px;
+	margin:0 auto;
+}
+.ks-date-picker td a.today, .ks-date-picker td a.today:visited, .ks-date-picker-change a:hover{
+	color:#fff;
+	background-color:#3898ef;
+	border:1px solid #3898ef;
+}
+.ks-date-picker td a.prev-month, .ks-date-picker td a.prev-month:visited, .ks-date-picker td a.next-month, .ks-date-picker td a.next-month:visited{
+	color: #a4acb6;
+}
+.ks-date-picker td a:hover, .ks-date-picker td a.active, .ks-date-picker td a.active:visited{
+	color:#3898ef;
+	border:1px solid #3898ef;
+}
+.ks-date-picker td a.today:hover{
+	color: #fff;
+}
+.ks-date-picker-time{
+	padding:8px 10px;
+	color:#2299ee;
+	display:none;
+}
+.ks-date-picker-time strong{
+	font-weight:100;
+}
+.ks-date-picker-time i{
+	display:inline-block;
+	width:16px;
+	height:20px;
+	background:url(../images/ui.icon1x.png) no-repeat -165px -25px;
+	vertical-align:-8px;
+	*vertical-align:-6px;
+	margin-right:5px;
+}
+.ks-date-picker-time span{
+	cursor:default;
+}
+.ks-date-picker-change{
+	height:160px;
+	overflow-y:auto;
+}
+.ks-date-picker-change a, .ks-date-picker-change a:visited{
+	display:block;
+	height:24px;
+	text-align:center;
+	line-height:24px;
+	color: #616366;
+}
+.ks-date-picker .ks-poplayer{
+	display:none;
+}
+.ks-date-picker .ks-poplayer-content{
+	padding:0 1px;
+}

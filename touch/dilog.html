@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta http-equiv="Cache-Control" content="Cache" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>kissUi前端组件库-移动端</title>
+        <link type="text/css" rel="stylesheet" href="styles/kissui.core.css">
+        <style type="text/css">
+            body{
+                background-color: #efefef;
+                padding-top: 4rem;
+            }
+        </style>
+        <script language="javascript">
+            window['viewportConfig'] = {
+                designWidth: 1080, 
+                designFontSize: 40
+            };
+        </script>
+        <script type="text/javascript" src="../plugin/viewport/viewport.js"></script>
+    </head>
+    <body>
+        <div class="ks-head-fixed">
+            <div class="ks-head">
+                <div class="left">
+                    <a href="index.html" id="goBack" class="icon return"></a>
+                </div>
+<!--                 <div class="right">
+                    <div class="btn-text last">取消</div>
+                </div> -->
+                <div class="text">
+                    <h4>对话框</h4>
+                </div>
+            </div>
+        </div>
+        <div class="ks-mask"></div>
+        <div id="dilog" class="ks-dilog ks-ani-bottom-page" data-height="22.75">
+          <div class="ks-dilog-title ks-text-center">
+              <h4>我是一个对话框</h4>
+          </div>
+          <div class="ks-dilog-con">
+            <p>1.接单后无法单方面取消订单，可通过电话请求用车人取消。</p>
+            <p>2.本次配送若存在搬运、拆装、路桥等额外费用，与用车人另行协商 。</p>
+          </div>
+          <div class="ks-dilog-btn">
+            <input type="button" class="cancel" value="取消">
+            <input type="button" class="confirm" value="确定">
+          </div>
+        </div> 
+        <script type="text/javascript" src="../lib/zepto/zepto.min.js"></script>
+        <script type="text/javascript" src="../lib/zepto/zepto.zfx.min.js"></script>
+        <script type="text/javascript" src="../touch.config.js"></script>
+        <script type="text/javascript" src="../lib/kissui.core.js"></script>
+        <script type="text/javascript" src="../utils/kissui.utils.js"></script>
+        <script type="text/javascript" src="../src/kissui.widget.js"></script>
+        <script type="text/javascript" src="../src/kissui.touch.js"></script>
+        <script type="text/javascript" src="../src/kissui.tdilog.js"></script>
+        <script language="javascript">
+            //代码创建
+            var dilog = new K.Ui.TDilog({
+                $dilog : $("#dilog"),
+                callback : {
+                    cancel : function($btn){
+                        alert($btn.index());
+                    },
+                    confirm : function($btn){
+                        K.Ui.Touch.mask("hide");
+                        alert($btn.index());
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta http-equiv="Cache-Control" content="Cache" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>kissUi前端组件库-移动端</title>
+        <link type="text/css" rel="stylesheet" href="styles/kissui.core.css">
+        <style type="text/css">
+            body{
+                background-color: #efefef;
+                padding-top: 4rem;
+            }
+        </style>
+        <script language="javascript">
+            window['viewportConfig'] = {
+                designWidth: 1080, 
+                designFontSize: 40
+            };
+        </script>
+        <script type="text/javascript" src="../plugin/viewport/viewport.js"></script>
+    </head>
+    <body>
+        <div class="ks-head-fixed">
+            <div class="ks-head">
+                <div class="left">
+                    <a href="index.html" id="goBack" class="icon return"></a>
+                </div>
+<!--                 <div class="right">
+                    <div class="btn-text last">取消</div>
+                </div> -->
+                <div class="text">
+                    <h4>toast提醒</h4>
+                </div>
+            </div>
+        </div>
+        <div class="ks-mask"></div>
+        <div class="ks-slidetips ks-slidetips-infor">
+                <i></i>
+                提供相关的信息或建议
+             </div>
+         </div>
+         <div class="ks-slidetips-wrap">
+            <div class="ks-slidetips ks-slidetips-warn">
+                <i></i>
+                警示已经发生或可能在未来发生的问题
+             </div>
+         </div>
+         <div class="ks-slidetips-wrap">
+            <div class="ks-slidetips ks-slidetips-succeed">
+                <i></i>
+                提示操作成功或流程成功
+             </div>
+         </div>
+        <div class="ks-tip ks-tip-infor">
+            <i></i>
+            提供相关的信息或建议
+         </div>
+         <div class="ks-tip ks-tip-warn">
+            <i></i>
+            警示已经发生或可能在未来发生的问题
+         </div>
+         <div class="ks-tip ks-tip-succeed">
+            <i></i>
+            提示操作成功或流程成功
+         </div>
+         <div class="ks-tip-wrap">
+             <div class="ks-tip-news">
+                <i></i>
+                您有一条新的信息
+             </div>
+         </div>
+         <div class="ks-tooltip ks-border-bottom">
+            <i></i>
+            当前网路不可用，请检查你的网路设置。
+         </div>      
+         <div class="ks-poptips">
+            <p></p>
+         </div>
+        <script type="text/javascript" src="../lib/zepto/zepto.min.js"></script>
+        <script type="text/javascript" src="../lib/zepto/zepto.zfx.min.js"></script>
+        <script type="text/javascript" src="../touch.config.js"></script>
+        <script type="text/javascript" src="../lib/kissui.core.js"></script>
+        <script type="text/javascript" src="../utils/kissui.utils.js"></script>
+        <script type="text/javascript" src="../src/kissui.widget.js"></script>
+        <script type="text/javascript" src="../src/kissui.touch.js"></script>
+        <script language="javascript">
+            //代码创建
+            K.Ui.Touch.mask("show");
+            K.Ui.Touch.toast("我是一个toast提醒", function(){
+                K.Ui.Touch.mask("hide");
+            });
+        </script>
+    </body>
+</html>

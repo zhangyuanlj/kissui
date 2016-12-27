@@ -1,0 +1,44 @@
+html, body {
+	height: 100%;
+}
+body {
+	background: url(../img/de.index.bg.jpg) no-repeat center top;
+	background-size: cover;
+	font-family: "微软雅黑", "宋体";
+}
+.de-width1000 {
+	width: 1000px;
+	margin: 0 auto;
+}
+.de-top {
+	height: 92px;
+	overflow: hidden;
+}
+.de-top-logo {
+	width: 122px;
+	height: 28px;
+	background: url(../img/de.index.logo.png) no-repeat;
+	margin-top: 32px;
+	float: left;
+}
+.de-top-nav {
+	float: right;
+}
+.de-top-nav a {
+	display: block;
+	color: #fff;
+	float: left;
+	width: 120px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	margin: 27px 5px;
+	font-size: 16px;
+}
+.de-top-nav a.de-top-nav-current, .de-top-nav a:hover {
+	background: #229eda;
+	border-radius: 25px;
+}
+.de-index-zwz {
+	margin-top: 150px;
+}
