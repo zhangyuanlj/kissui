@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-12
  */
-(function($){
-	var KRenderComp = {
+Ks().package("K.Ui", function(Ks){
+	this.RenderWidget = {
 		/**
 		 * 设置属性初始值
 		 * @param String attrVal 属性值
@@ -50,8 +50,7 @@
 					animate : animate,
 					offsetPx : offsetPx
 				};
-				console.log(config);
-				return new KTootip(config);
+				return new K.Ui.Tootip(config);
             });
 		},
 		//快速创建下拉列表
@@ -74,7 +73,7 @@
 					show : show,
 					triggerMode : triggerMode
 				};
-				return new KDropDown(config);
+				return new K.Ui.DropDown(config);
 			});
 		},
 		//快速创建表单组件
@@ -107,7 +106,7 @@
 						maxValue : maxValue
 					}
 				};
-				return new KDatePicker(config);
+				return new K.Ui.DatePicker(config);
 			});
 		},
 		renderRadio : function(){
@@ -115,13 +114,13 @@
 			$(".ks-radio").each(function() {
 				var radioName = $(this).attr("data-radio-name");
 				var $radio = $(".ks-radio[data-radio-name='"+radioName+"'] a");
-				$radio.die().live("click", function(){
+				$radio.off().on("click", function(){
 					var $this = $(this);
 					if(that._disableSelect($this)){
 						return false;
 					}
+					$radio.removeClass("checked");
 					$this.addClass("checked");
-					$radio.not($this).removeClass("checked");
 				});
             });
 		},
@@ -130,7 +129,7 @@
 			$(".ks-checkbox").each(function() {
 				var radioName = $(this).attr("data-checkbox-name");
 				var $checkbox = $(".ks-checkbox[data-checkbox-name='"+radioName+"'] a");
-				$checkbox.die().live("click", function(){
+				$checkbox.off().on("click", function(){
 					var $this = $(this);
 					if(that._disableSelect($this)){
 						return false;
@@ -145,7 +144,7 @@
             });
 		},
 		renderSwitch : function(){
-			$(".ks-switch").die().live("click", function(){
+			$(".ks-switch").off().on("click", function(){
 				 var $this = $(this);
 				 var $input = $this.children("input");
 				 var styleName = $this.attr("data-style");
@@ -197,5 +196,4 @@
 			return $(".ks-switch input[name='"+switchName+"']").val();
 		}
 	};
-	window.KRenderComp = KRenderComp;
-})(jQuery);
+});

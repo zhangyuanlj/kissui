@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-9
  */
-(function($){
-	var KComboBox = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.ComboBox = function(config){
 		this.$comboBox = null;
 		this.config = {
 			$parent : $("#combo-wrapper"),
@@ -38,7 +38,7 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KComboBox.prototype = {
+	this.ComboBox.prototype = {
 		_init : function(){
 			this._create();
 			if(!this.config.disable){
@@ -154,7 +154,7 @@
 			var that = this;
 			var comboId = this.$comboBox.attr("id");
 			//打开关闭组合框
-			$("#"+comboId+" .ks-select-title").live("mousedown", function(e){
+			$("#"+comboId+" .ks-select-title").on("mousedown", function(e){
 				if(e.which != 1){
 					return false;
 				}
@@ -177,7 +177,7 @@
 				e.stopPropagation();
 			});
 			//点击组合框列表，并赋值
-			$("#"+comboId+" ul a").live("mousedown", function(e){
+			$("#"+comboId+" ul a").on("mousedown", function(e){
 				if(e.which != 1){
 					return false;
 				}
@@ -194,7 +194,7 @@
 				}
 				that._setComboBoxStyle("block");
 			});
-			$("#"+comboId+" ul").live("mousedown", function(e){
+			$("#"+comboId+" ul").on("mousedown", function(e){
 				e.stopPropagation();
 			});
 			//点击空白区域关闭组合框
@@ -231,5 +231,4 @@
 			this._setComboListHeight();
 		}
 	};
-	window.KComboBox = KComboBox;
-})(jQuery);
+});

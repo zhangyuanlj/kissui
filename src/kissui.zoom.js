@@ -9,8 +9,8 @@
   * @options zoomBoxDirection 放大镜容器显示位置(1：水平 2：垂直)
   *
   */
-(function($){
-	var KZoom = function(options){
+Ks().package("K.Ui", function(Ks){
+	this.Zoom = function(options){
 		var thumbImgMouseX = 0, thumbImgMouseY = 0;
 		var zoomboxWidth = 500, zoomboxHeight = 500;
 		var imgaesLoad = false;
@@ -76,7 +76,7 @@
 			});
 		}
 		function _bindEvent(){
-			$(_options.thumbImgObj).live("mouseover", function(e){
+			$(_options.thumbImgObj).on("mouseover", function(e){
 				var self = this;
 				_createZoomBox(this);
 				_appendImages($(this).attr("bigImgUrl"));
@@ -87,17 +87,16 @@
 					thumbImgMouseY = e.pageY - $(self).offset().top;
 					_moveImages(self, "#zoombox img", thumbImgMouseX, thumbImgMouseY);
 				});
-			}).live("mousemove", function(e){
+			}).on("mousemove", function(e){
 				if(!imgaesLoad){
 					return false;
 				}
 				thumbImgMouseX = e.pageX - $(this).offset().left;
 				thumbImgMouseY = e.pageY - $(this).offset().top;
 				_moveImages(this, "#zoombox img", thumbImgMouseX, thumbImgMouseY);
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				$("#zoombox").remove();
 			});
 		}
 	};
-	window.KZoom = KZoom;
-})(jQuery);
+});

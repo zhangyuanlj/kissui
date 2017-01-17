@@ -127,7 +127,15 @@ body {
 .ks-breadcrumb{
 	height: 20px;
 	line-height: 20px;
+	margin-bottom: 20px;
 	overflow: hidden;
+}
+.ks-breadcrumb-hasbg{
+	height: 36px;
+	line-height: 36px;
+	background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 0 15px;
 }
 .ks-breadcrumb li{
 	float: left;
@@ -144,4 +152,11 @@ body {
 	height: 12px;
 	background:url(../images/ui.icon1x.png) no-repeat -13px -47px;
 	margin-top: 3px;
+}
+.ks-breadcrumb-hasbg .arrow{
+	margin-top: 11px;
+}
+.ks-breadcrumb .slash{
+	width: 20px;
+	text-align: center;
 }

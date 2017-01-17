@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-13
  */
-(function(){
-	var KCalendar = function(){
+Ks().package("K", function(Ks){
+	this.Calendar = function(){
 		var Gan = new Array("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
 		var Zhi = new Array("子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥");
 		var lunarInfo = new Array(
@@ -193,5 +193,4 @@
 			}
 		}
 	};
-	window.KCalendar = KCalendar;
-})();
+});

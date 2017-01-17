@@ -3,14 +3,14 @@
  * author:张渊
  * modifyTime:2016-9-8
  */
-(function(top) {
-	var KUpPullRefresh = top.KUpPullRefresh = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.UpPullRefresh = function(config){
 		var element = {
 			$win : $(window),
 			$doc : $(document)
 		};
 		var that = this;
-		var public = KUpPullRefresh.prototype;
+		var public = K.Ui.UpPullRefresh.prototype;
 		var defualts = {
 			up: {
 				$upLoad : $("#pullUpLoad"),
@@ -203,4 +203,4 @@
 			this.reset();
 		};
 	};
-})(window);
+});

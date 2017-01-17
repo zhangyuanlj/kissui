@@ -3,11 +3,11 @@
  * author:张渊
  * modifyTime:2016-10-12
  */
-(function(top) {
-	var KLoader = top.KLoader = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Loader = function(config){
 		var $loader = null;
 		var that = this;
-		var public = KLoader.prototype;
+		var public = K.Ui.Loader.prototype;
 		var defaults = {
 			speed : 200,
 			loadText : "加载中，请稍后",
@@ -60,4 +60,4 @@
 			$loader = null;
 		};
 	};
-})(window);
+});

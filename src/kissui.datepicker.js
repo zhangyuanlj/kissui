@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-11
  */
-(function($){
-	var KDatePicker = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.DatePicker = function(config){
 		this.$datePicker = null;
 		this.config = {
 			$input : $("input[name='date']"),
@@ -27,11 +27,11 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KDatePicker.prototype = {
+	this.DatePicker.prototype = {
 		_init : function(){
 			var that = this;
 			if(this.config.init.disable){
-				$(this.config.$eventObj).live("mousedown", function(e){
+				$(this.config.$eventObj).on("mousedown", function(e){
 					var $datePicker = $(".ks-date-picker");
 					if($datePicker.length){
 						$datePicker.remove();
@@ -123,7 +123,7 @@
 				_config.init.$parent.html(datePickerTemp);
 			}
 			this.$datePicker = $("#"+datePickerId);
-			this.KCalendar = new KCalendar();
+			this.Calendar = new K.Calendar();
 			if(_config.showTime){
 				var hour = date.getHours().toString();  
 				var minute = date.getMinutes().toString();
@@ -153,8 +153,8 @@
 			var prevMonth = month == 1 ? 12 : month-1;
 			var nextYear = currentMonth == 12 ? currentYear+1 : currentYear;
 			var nextMonth = currentMonth == 12 ? 1 : currentMonth+1;
-			var prevMonthDays = currentMonth != 1 ? this.KCalendar.getMonthDays(prevYear, prevMonth) : this.KCalendar.getMonthDays(prevYear, prevMonth);
-			var currentMonthDays = this.KCalendar.getMonthDays(currentYear, currentMonth);
+			var prevMonthDays = currentMonth != 1 ? this.Calendar.getMonthDays(prevYear, prevMonth) : this.Calendar.getMonthDays(prevYear, prevMonth);
+			var currentMonthDays = this.Calendar.getMonthDays(currentYear, currentMonth);
 			var nextMonthFirstDay = 1;
 			var converDayWeek = [6, 0, 1, 2, 3, 4, 5];
 			var dateHtml = [];
@@ -172,9 +172,9 @@
 			};
 			var _config = this.config;
 			var _configLan = _config.language;
-			var titleStr = '<span><strong class="current-year">'+currentYear+'</strong>'
-			             + language[_configLan][0][0]+'</span><span><strong class="current-month">'
-						 + currentMonth+'</strong>'+language[_configLan][0][1]+'</span>';
+			var titleStr = '<strong class="current-year">'+currentYear
+						 +language[_configLan][0][0]+'</strong><strong class="current-month">'
+						 + currentMonth+language[_configLan][0][1]+'</strong>';
 			this.$datePicker.children(".ks-date-picker-hd").find("h4").html(titleStr);
 			dateHtml.push('<tr>');
 			$(language[_configLan][1]).each(function(index) {
@@ -214,11 +214,14 @@
 		 * @param Object yearSetting 年份配置
 		 */
 		_createChangeMenu : function(yearSetting){
+			var $document = $(document);
 			var that = this;
 			var datePickerId = this.$datePicker.attr("id");
 			var $changePop = $("#"+datePickerId+" .ks-poplayer");
 			var $yearPop = $("#"+datePickerId+"-year-popLayer");
 			var $monthPop = $("#"+datePickerId+"-month-popLayer");
+			var yearBtn = "#"+datePickerId+" .ks-date-picker-hd .current-year";
+			var monthBtn = "#"+datePickerId+" .ks-date-picker-hd .current-month";
 			var yearItems = [];
 			var monthItems = [];
 			for(var i = yearSetting.minValue; i <= yearSetting.maxValue; i++){
@@ -227,15 +230,16 @@
 			for(var j = 1; j <= 12; j++){
 				monthItems.push('<a href="javascript:void(0);">'+j+'</a>');
 			}
+			$yearPop.children(".ks-poplayer-content").width(90).html(yearItems.join("\n"));
+			$monthPop.children(".ks-poplayer-content").width(60).html(monthItems.join("\n"));
 			//打开切换年份列表
-			$("#"+datePickerId+" .ks-date-picker-hd .current-year").live("mousedown", function(e){
+			$document.off(yearBtn).on("mousedown", yearBtn, function(e){
 				var $year = $(this);
 				var display = $yearPop.css("display");
 				$yearPop.css({
 					left : $year.position().left/2,
 					top : $year.position().top+$year.outerHeight(true)+10
 				});
-				$yearPop.children(".ks-poplayer-content").width(90).html(yearItems.join("\n"));
 				$changePop.hide();
 				if(display == "none"){
 					$yearPop.show();
@@ -244,16 +248,16 @@
 					$yearPop.hide();
 				}
 				e.stopPropagation();
+				return false;
 			});
 			//打开切换月份列表
-			$("#"+datePickerId+" .ks-date-picker-hd .current-month").live("mousedown", function(e){
+			$document.off(monthBtn).on("mousedown", monthBtn, function(e){
 				var $month = $(this);
 				var display = $monthPop.css("display");
 				$monthPop.css({
 					left : $month.position().left/2+30,
 					top : $month.position().top+$month.outerHeight(true)+10
 				});
-				$monthPop.children(".ks-poplayer-content").width(60).html(monthItems.join("\n"));
 				$changePop.hide();
 				if(display == "none"){
 					$monthPop.show();
@@ -262,9 +266,10 @@
 					$monthPop.hide();
 				}
 				e.stopPropagation();
+				return false;
 			});
 			//切换年份
-			$("#"+datePickerId+"-year-popLayer a").live("mousedown", function(e){
+			$("#"+datePickerId+"-year-popLayer a").on("mousedown", function(e){
 				var selectDate = that._getChangeDate();
 				var year = parseInt($(this).text());
 				var month = selectDate.month;
@@ -273,7 +278,7 @@
 				e.stopPropagation();
 			});
 			//切换月份
-			$("#"+datePickerId+"-month-popLayer a").live("mousedown", function(e){
+			$("#"+datePickerId+"-month-popLayer a").on("mousedown", function(e){
 				var selectDate = that._getChangeDate();
 				var year = selectDate.year;
 				var month = parseInt($(this).text());
@@ -281,14 +286,8 @@
 				$changePop.hide();
 				e.stopPropagation();
 			});
-			$changePop.live("mousedown", function(e){
+			$changePop.on("mousedown", function(e){
 				e.stopPropagation();
-			});
-			//点击空白区域关闭列表
-			$(document).bind("mousedown", function(){
-				if($changePop.length){
-					$changePop.hide();
-				}
 			});
 		},
 		//创建时间设置菜单
@@ -312,11 +311,13 @@
 				minuteItems.push('<a href="javascript:void(0);">'+str+'</a>');
 				secondsItems.push('<a href="javascript:void(0);">'+str+'</a>');
 			}
+			$hourPop.children(".ks-poplayer-content").width(60).html(hourItems.join("\n"));
+			$minutePop.children(".ks-poplayer-content").width(60).html(minuteItems.join("\n"));
+			$secondsPop.children(".ks-poplayer-content").width(60).html(secondsItems.join("\n"));
 			//打开切换小时列表
-			$("#"+datePickerId+" .ks-date-picker-time .hour").live("mousedown", function(e){
+			$("#"+datePickerId+" .ks-date-picker-time .hour").on("mousedown", function(e){
 				var $hour = $(this);
 				var display = $hourPop.css("display");
-				$hourPop.children(".ks-poplayer-content").width(60).html(hourItems.join("\n"));
 				$hourPop.css({
 					left : $hour.position().left-$hourPop.width()/2+offsetLeft,
 					top : $hour.position().top-$hourPop.outerHeight(true)-10
@@ -329,12 +330,12 @@
 					$hourPop.hide();
 				}
 				e.stopPropagation();
+				return false;
 			});
 			//打开切换分钟列表
-			$("#"+datePickerId+" .ks-date-picker-time .minute").live("mousedown", function(e){
+			$("#"+datePickerId+" .ks-date-picker-time .minute").on("mousedown", function(e){
 				var $minute = $(this);
 				var display = $minutePop.css("display");
-				$minutePop.children(".ks-poplayer-content").width(60).html(minuteItems.join("\n"));
 				$minutePop.css({
 					left : $minute.position().left-$minutePop.width()/2+offsetLeft,
 					top : $minute.position().top-$minutePop.outerHeight(true)-10
@@ -347,12 +348,12 @@
 					$minutePop.hide();
 				}
 				e.stopPropagation();
+				return false;
 			});
 			//打开切换秒数列表
-			$("#"+datePickerId+" .ks-date-picker-time .seconds").live("mousedown", function(e){
+			$("#"+datePickerId+" .ks-date-picker-time .seconds").on("mousedown", function(e){
 				var $seconds = $(this);
 				var display = $secondsPop.css("display");
-				$secondsPop.children(".ks-poplayer-content").width(60).html(secondsItems.join("\n"));
 				$secondsPop.css({
 					left : $seconds.position().left-$secondsPop.width()/2+offsetLeft,
 					top : $seconds.position().top-$secondsPop.outerHeight(true)-10
@@ -365,23 +366,24 @@
 					$secondsPop.hide();
 				}
 				e.stopPropagation();
+				return false;
 			});
 			//切换小时
-			$("#"+datePickerId+"-hour-popLayer a").live("mousedown", function(e){
+			$("#"+datePickerId+"-hour-popLayer a").on("mousedown", function(e){
 				var hour = $(this).text();
 				$("#"+datePickerId+" .ks-date-picker-time .hour").text(hour);
 				$changePop.hide();
 				e.stopPropagation();
 			});
 			//切换分钟
-			$("#"+datePickerId+"-minute-popLayer a").live("mousedown", function(e){
+			$("#"+datePickerId+"-minute-popLayer a").on("mousedown", function(e){
 				var minute = $(this).text();
 				$("#"+datePickerId+" .ks-date-picker-time .minute").text(minute);
 				$changePop.hide();
 				e.stopPropagation();
 			});
 			//切换秒数
-			$("#"+datePickerId+"-seconds-popLayer a").live("mousedown", function(e){
+			$("#"+datePickerId+"-seconds-popLayer a").on("mousedown", function(e){
 				var seconds = $(this).text();
 				$("#"+datePickerId+" .ks-date-picker-time .seconds").text(seconds);
 				$changePop.hide();
@@ -403,7 +405,7 @@
 			var inputHeight = $input.outerHeight(true);
 			var datePickerHeight = this.$datePicker.height();
 			var bottomHeight = docHeight <= windowHeight ? windowHeight+$window.scrollTop()-inputTop-inputHeight : docHeight-inputTop-inputHeight;
-			var left = parseInt($.browser.version) <= 8 ? $input.position().left-7 : $input.position().left-1;
+			var left = $input.position().left-1;
 			var top = 0;
 			if(bottomHeight <= datePickerHeight){
 				top = inputTop-datePickerHeight;
@@ -416,9 +418,9 @@
 				top : top
 			});
 			//修正窗口大小改变时，日期选择器位置
-			$(window).resize(function(){
+			$window.resize(function(){
 				if($(".ks-date-picker").length){
-					var left = parseInt($.browser.version) <= 8 ? $input.position().left-7 : $input.position().left-1;
+					var left = $input.position().left-1;
 					that.$datePicker.css("left" , left);
 				}
 			});
@@ -458,7 +460,7 @@
 		_selectDate : function(){
 			var that = this;
 			var datePickerId = this.$datePicker.attr("id");
-			$("#"+datePickerId+" table td a").live("mousedown", function(e){
+			$("#"+datePickerId+" table td a").on("mousedown", function(e){
 				var $this = $(this);
 				var $dateItem = $("#"+datePickerId+" table td a[class!='today']");
 				var dateStr = $this.attr("data-date");
@@ -499,7 +501,8 @@
 		_flipDatePicker : function(){
 			var that = this;
 			var datePickerId = this.$datePicker.attr("id");
-			$("#"+datePickerId+" .ks-date-picker-hd .prev").live("mousedown", function(e){
+			var $changePop = $("#"+datePickerId+" .ks-poplayer");
+			$("#"+datePickerId+" .ks-date-picker-hd .prev").on("mousedown", function(e){
 				var selectDate = that._getChangeDate();
 				var year = selectDate.year;
 				var month = selectDate.month;
@@ -508,10 +511,11 @@
 					year--;
 					month = 12;
 				}
+				$changePop.hide();
 				that._updateDatePicker(year, month);
 				e.stopPropagation();
 			});
-			$("#"+datePickerId+" .ks-date-picker-hd .next").live("mousedown", function(e){
+			$("#"+datePickerId+" .ks-date-picker-hd .next").on("mousedown", function(e){
 				var selectDate = that._getChangeDate();
 				var year = selectDate.year;
 				var month = selectDate.month;
@@ -520,6 +524,7 @@
 					year++;
 					month = 1;
 				}
+				$changePop.hide();
 				that._updateDatePicker(year, month);
 				e.stopPropagation();
 			});
@@ -561,5 +566,4 @@
 			return null;
 		}
 	};
-	window.KDatePicker = KDatePicker;
-})(jQuery);
+});

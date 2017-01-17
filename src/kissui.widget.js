@@ -5,8 +5,6 @@
  */
 Ks().package("K.Ui", function(Ks){
 	this.Widget = Ks.creatClass({
-		$widget : null,
-		defaults : {},
 		//获取视窗的大小
     	getViewSize : function(){
     		var $doc = $(document);
@@ -133,6 +131,7 @@ Ks().package("K.Ui", function(Ks){
 			this.$widget.hide();
 		},
 		init : function(options){
+			this.$widget = null;
 			this.setOptions(options);
 		},
 		//销毁控件

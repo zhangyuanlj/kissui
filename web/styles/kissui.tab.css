@@ -1,0 +1,96 @@
+/*
+ * tab选项卡
+ * author:张渊
+ * modifyTime:2016-1-4
+ */
+.ks-tab{
+	height: 1%;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.ks-tabs a, .ks-tabs a:visited{
+	display: block;
+	color: #A7B1C2;
+	font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.ks-tabs li.active a, .ks-tabs.active a:visited{
+	position: relative;
+	color: #555;
+	border: 1px solid #ddd;
+    background-color: #fff;   
+}
+.ks-default-tabs{
+	height: 40px;
+    border-bottom: 1px solid #ddd;
+    *overflow: hidden;
+}
+.ks-default-tabs li{
+	float: left;
+}
+.ks-default-tabs a, .ks-default-tabs a:visited{
+    border-radius: 4px 4px 0 0;
+}
+.ks-default-tabs li.active a, .ks-default-tabs li.active a:visited{
+	height: 20px;
+    border-bottom: 0;
+}
+.ks-default-tabs .icon{
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+}
+.ks-icon-tabs a, .ks-icon-tabs a:visited{
+	padding: 11px 30px 12px;
+}
+.ks-icon-tabs li.active a, .ks-icon-tabs li.active a:visited{
+	height: 17px;
+}
+.ks-tab-con{
+	border: 1px solid #ddd;
+    border-top: 0;
+    background-color: #fff;  
+    border-radius: 0 0 4px 4px; 
+    clear: both;
+}
+.ks-left-tabs, .ks-right-tabs{
+	width: 160px;
+    *overflow: hidden;
+}
+.ks-left-tab-con, .ks-right-tab-con{
+	min-height: 150px;
+	border: 1px solid #ddd; 
+	clear: none;
+}
+.ks-left-tabs{
+	float: left;
+}
+.ks-left-tab-con{
+	margin-left: 160px;
+	border-radius: 0 4px 4px 4px;
+}
+.ks-left-tabs a, .ks-left-tabs a:visited{
+	width: 120px;
+    border-radius: 4px 0 0 4px;
+}
+.ks-left-tabs li.active a, .ks-left-tabs li.active a:visited{
+    border-right: 0;   
+}
+.ks-right-tabs{
+	float: right;
+}
+.ks-right-tab-con{
+	margin-right: 158px;
+	border-radius: 4px 0 4px 4px;
+}
+.ks-right-tabs a, .ks-right-tabs a:visited{
+	width: 119px;
+	*width: 120px;
+    border-radius: 0 4px 4px 0;
+}
+.ks-right-tabs li.active a, .ks-right-tabs li.active a:visited{
+	*right: 1px;
+    border-left: 0;   
+}

@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-11
  */
-(function($){
-	var KPosition = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Position = function(config){
 		this.config = {
 			$targetObj : $("#target"),  
 			$layer : $("#layer"),
@@ -13,7 +13,7 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KPosition.prototype = {
+	this.Position.prototype = {
 		_init : function(){
 			var $window = $(window);
 			var _config = this.config;
@@ -141,5 +141,4 @@
 			return location;
 		}
 	};
-	window.KPosition = KPosition;
-})(jQuery);
+});

@@ -17,8 +17,8 @@
  * isMarquee : false                                               //是否模拟Marquee标签
  *
  */
-(function($){
-	var KScroll = function(options){
+Ks().package("K.Ui", function(Ks){
+	this.ScrollLayer = function(options){
 		var self = this;
 		var timer = null;
 		var isAnimate = false, isLoad = true;
@@ -182,7 +182,7 @@
 		}
 		//绑定事件
 		function _bindEvent(){
-			$(_options.prevBtn).die().live("click", function(){
+			$(_options.prevBtn).off().on("click", function(){
 				  if(_options.isMarquee){
 					 return false;
 				  }
@@ -194,14 +194,14 @@
 				  else{
 					  _verticalScroll("prev"); 
 				  }
-			}).live("mouseover", function(){
+			}).on("mouseover", function(){
 				 $(this).addClass(_options.prevBtnHoverStyle);
 				 self.clearTimer();
 				 if(_options.isMarquee){
 					  self.setScrollDirection("prev");
 					  self.setTimer();
 				 }
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				$(this).removeClass(_options.prevBtnHoverStyle);
 				if(_options.isMarquee){
 					 return false;
@@ -210,7 +210,7 @@
 					self.setTimer();
 				}
 			});
-			$(_options.nextBtn).die().live("click", function(){
+			$(_options.nextBtn).off().on("click", function(){
 				  if(_options.isMarquee){
 					  return false;
 				  }
@@ -222,14 +222,14 @@
 				  else{
 					 _verticalScroll("next"); 
 				  }
-			}).live("mouseover", function(){
+			}).on("mouseover", function(){
 				 $(this).addClass(_options.nextBtnHoverStyle);
 				 self.clearTimer();
 				 if(_options.isMarquee){
 					  self.setScrollDirection("next");
 					  self.setTimer();
 				 }
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				$(this).removeClass(_options.nextBtnHoverStyle);
 				if(_options.isMarquee){
 					 return false;
@@ -238,12 +238,11 @@
 					self.setTimer();
 				}
 			});
-			$(_options.maskObj).live("mouseover", function(){
+			$(_options.maskObj).on("mouseover", function(){
 				self.clearTimer();
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				self.setTimer();
 			});
 		}
 	};
-	window.KScroll = KScroll;
-})(window.jQuery || window.Zepto);
+});

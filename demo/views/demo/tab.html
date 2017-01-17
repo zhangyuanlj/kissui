@@ -1,88 +1,93 @@
 <style type="text/css">
-	.tab{
-		width:320px;
-		border:1px solid #bdd7f2;
-		border-top:0px;
-	}
-	.tab_title{
-		height:32px;
-		line-height:32px;
-		font-size:14px;
-		background:url(../../web/images/test/tab_title_bg.png) no-repeat;
-		overflow:hidden;
-	}
-	.tab_title li{
-		float:left;
-		background:url(../../web/images/test/tab_title_no_select_bg.png) no-repeat right bottom;
-	}
-	.tab_title li a, .tab_title li a:visited{
-		display:block;
-		padding:0 20px;
-		color:#000;
-	}
-	.tab_title li.current{
-		border-top:2px solid #458fce;
-		border-right:1px solid #bdd7f2;
-		background:#fff none;
-	}
-	.tab_content{
-		padding:15px 0;
-		margin:0 auto;
-		width:300px;
-		position:relative;
-		overflow:hidden;
-	}
-	.tab_content_scroll{
-		width:18000px;
-		position:absolute;
-		left:0px;
-		top:15px;
-	}
-	.tab_content_scroll img{
-		display:block;
-		float:left;
-		width:300px;
-		height:300px;
-	}
-	.tab_loading{
-		height:30px;
-		line-height:30px;
-		background:url(../../web/images/ui.loader.gif) no-repeat left center;
-		padding-left:20px;
-		display:none;
-	}
+    .icon1  {
+        background:url(../../web/images/test/jingoal_newtree.png) no-repeat -5px -17px;
+    }
+    .icon2  {
+        background:url(../../web/images/test/jingoal_newtree.png) no-repeat -27px -18px;
+    }
+    .icon3  {
+        background:url(../../web/images/test/jingoal_newtree.png) no-repeat -66px -17px;
+    }
 </style>
-<h2>分页控件</h2>
+<h2>Tab标签</h2>
 <div class="de-catalog">
     <div class="de-catalog-title"><h3>目录</h3></div>
     <div class="de-toc-bd">
         <ul class="de-toc">
+            <li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
         	<li class="de-catalog-header"><a href="#demo1">普通实例</a></li>
             <li class="de-catalog-header"><a href="#demo2">自动播放</a></li>
             <li class="de-catalog-header"><a href="#demo3">添加删除TAB</a></li>
             <li class="de-catalog-header"><a href="#option">配置说明</a></li>
-            <li class="de-catalog-header"><a href="#function">KTab方法</a></li>
+            <li class="de-catalog-header"><a href="#function">K.Ui.Tab方法</a></li>
         </ul>
     </div>
+</div>
+<a id="css"></a>
+<div class="de-demo-code">
+    <pre><code class="html">&lt;!--kissui.tab.css--&gt;</code></pre>
 </div>
 <a id="demo1"></a>
 <div class="de-title">普通实例</div>
 <div class="de-subtitle">实例</div>
 <div class="de-demo-wrap">
-	<div class="tab">
-        <ul class="tab_title">
-            <li class="current"><a href="#">标题1</a></li>
-            <li><a href="#">标题2</a></li>
+	<div id="tab1" class="ks-tab">
+        <ul class="ks-tabs ks-default-tabs">
+            <li class="active">
+                <a href="javascript:void(0);">选项卡一</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡二</a>
+            </li>
         </ul>
-        <div class="tab_content">
-            <div>内容1</div>
-            <div class="ks-layer-none">内容2</div>
+        <div class="ks-tab-con">
+            <div class="ks-panel-con">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库1</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库2</p>
+            </div>
+        </div>
+    </div>
+    <div id="tab2" class="ks-tab">
+        <ul class="ks-tabs ks-default-tabs ks-icon-tabs">
+            <li class="active">
+                <a href="javascript:void(0);">
+                    <i class="icon icon1"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="icon icon2"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="icon icon3"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="ks-tab-con">
+            <div class="ks-panel-con">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库1</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库2</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库3</p>
+            </div>
         </div>
     </div>
 </div>
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
-	<pre><code class="javascript">var tab1 = new KTab({
+	<pre><code class="javascript">var tab1 = new K.Ui.Tab({
     $tabTitle : $(".tab:eq(0) li"),
     $tabCon : $(".tab_content:eq(0) div"),
     selectStyle : "current",
@@ -93,24 +98,64 @@
 <div class="de-title">自动播放</div>
 <div class="de-subtitle">实例</div>
 <div class="de-demo-wrap">
-	<div class="tab">
-          <ul class="tab_title">
-              <li class="current"><a href="#">标题1</a></li>
-              <li><a href="#">标题2</a></li>
-              <li><a href="#">标题3</a></li>
-              <li><a href="#">标题4</a></li>
-          </ul>
-          <div class="tab_content">
-              <div>内容1</div>
-              <div class="ks-layer-none">内容2</div>
-              <div class="ks-layer-none">内容3</div>
-              <div class="ks-layer-none">内容4</div>
-          </div>
-      </div>
+    <div id="tab3" class="ks-tab">
+        <ul class="ks-tabs ks-left-tabs">
+            <li class="active">
+                <a href="javascript:void(0);">选项卡一</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡二</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡三</a>
+            </li>
+        </ul>
+        <div class="ks-tab-con ks-left-tab-con">
+            <div class="ks-panel-con">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+        </div>
+    </div>
+    <div id="tab5" class="ks-tab">
+        <ul class="ks-tabs ks-right-tabs">
+            <li class="active">
+                <a href="javascript:void(0);">选项卡一</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡二</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡三</a>
+            </li>
+        </ul>
+        <div class="ks-tab-con ks-right-tab-con">
+            <div class="ks-panel-con">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库</p>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
-	<pre><code class="javascript">var tab2 = new KTab({
+	<pre><code class="javascript">var tab2 = new K.Ui.Tab({
     $tabTitle : $(".tab:eq(2) li"),
     $tabCon : $(".tab_content:eq(2) div"),
     selectStyle : "current",
@@ -127,15 +172,25 @@
         <a href="javascript:void(0);" id="addTab" class="ks-button-a">添加</a>
         <button type="button" id="deleteTab" class="ks-button-input ks-button-primary">删除</button>
     </div>
-    <div class="tab" style="margin-top:15px;">
-          <ul class="tab_title">
-              <li class="current"><a href="#">标题1</a></li>
-              <li><a href="#">标题2</a></li>
-          </ul>
-          <div class="tab_content">
-              <div>内容1</div>
-              <div class="ks-layer-none">内容2</div>
-          </div>
+    <div id="tab4" class="ks-tab" style="margin-top:15px;">
+        <ul class="ks-tabs ks-default-tabs">
+            <li class="active">
+                <a href="javascript:void(0);">选项卡一</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">选项卡二</a>
+            </li>
+        </ul>
+        <div class="ks-tab-con">
+            <div class="ks-panel-con">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库1</p>
+            </div>
+            <div class="ks-panel-con ks-layer-none">
+                <strong>KISSUI2.0</strong>
+                <p>一款基于jQuery的优雅简洁的前端组件库2</p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="de-subtitle">JS代码</div>
@@ -216,7 +271,7 @@ $("#deleteTab").bind("click", function(){
     </tr>
 </table>
 <a id="function"></a>
-<div class="de-subtitle">KTab方法</div>
+<div class="de-subtitle">K.Ui.Tab方法</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th width="160">方法名</th>
@@ -241,37 +296,44 @@ $("#deleteTab").bind("click", function(){
 </table>
 <script type="text/javascript" src="../../src/kissui.tab.js"></script>
 <script language="javascript">
-	var tab1 = new KTab({
-		$tabTitle : $(".tab:eq(0) li"),
-		$tabCon : $(".tab_content:eq(0) div"),
-		selectStyle : "current",
+	var tab1 = new K.Ui.Tab({
+		$tabTitle : $("#tab1 li"),
+		$tabCon : $("#tab1 .ks-panel-con"),
 		triggerEvent : "mouseover"
 	});
-	var tab2 = new KTab({
-		  $tabTitle : $(".tab:eq(1) li"),
-		  $tabCon : $(".tab_content:eq(1) div"),
-		  selectStyle : "current",
-		  selectIndex : 3,
+    var tab2 = new K.Ui.Tab({
+        $tabTitle : $("#tab2 li"),
+        $tabCon : $("#tab2 .ks-panel-con")
+    });
+	var tab3 = new K.Ui.Tab({
+		  $tabTitle : $("#tab3 li"),
+		  $tabCon : $("#tab3 .ks-panel-con"),
+		  selectIndex : 1,
 		  triggerEvent : "mouseover",
 		  slideEnabled : true
 	});
-	var tab3 = new KTab({
-		$tabTitle : $(".tab:eq(2) li"),
-		$tabCon : $(".tab_content:eq(2) div"),
-		selectStyle : "current",
+	var tab4 = new K.Ui.Tab({
+		$tabTitle : $("#tab4 li"),
+		$tabCon : $("#tab4 .ks-panel-con"),
 		triggerEvent : "mouseover"
 	});
+    var tab5 = new K.Ui.Tab({
+          $tabTitle : $("#tab5 li"),
+          $tabCon : $("#tab5 .ks-panel-con"),
+          selectIndex : 2,
+          slideEnabled : true
+    });
 	$("#addTab").bind("click", function(){
-		if($(".tab:eq(2) li").length < 4){
-			tab3.addTab({
-				tabTitle : $(".tab:eq(2) li").eq(0).clone(),
-				tabCon : $(".tab_content:eq(2) div").eq(0).clone()
+		if($("#tab4 li").length < 4){
+			tab4.addTab({
+				tabTitle : $("#tab4 li").eq(1).clone(),
+				tabCon : $("#tab4 .ks-panel-con").eq(1).clone()
 			});
 		}
 	});
 	$("#deleteTab").bind("click", function(){
-		if($(".tab:eq(2) li").length > 2){
-			tab3.deleteTab($(".tab:eq(2) li").length-1);
+		if($("#tab4 li").length > 2){
+			tab4.deleteTab($("#tab4 li").length-1);
 		}
 	});
 </script>

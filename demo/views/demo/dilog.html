@@ -6,7 +6,7 @@
         	<li class="de-catalog-header"><a href="#css">CSS样式包</a></li>
             <li class="de-catalog-header"><a href="#create">创建对话框</a></li>
             <li class="de-catalog-header"><a href="#option">配置说明</a></li>
-            <li class="de-catalog-header"><a href="#function">KDilog方法</a></li>
+            <li class="de-catalog-header"><a href="#function">K.Ui.Dilog方法</a></li>
         </ul>
     </div>
 </div>
@@ -29,7 +29,7 @@
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入drag、dilog代码包*/
 //内容对话框
-var dilog = new KDilog({
+var dilog = new K.Ui.Dilog({
     width : 300,
     title :　{
         text : "选择人员"
@@ -43,16 +43,16 @@ var dilog = new KDilog({
         items : [{
             text : "确定",
             btnStyle : "blue",
-            callback : function(KDilog){
-                KDilog.setPosition(8, {left:10, top:20});
+            callback : function(Dilog){
+                Dilog.setPosition(8, {left:10, top:20});
                 return true;
             }
         },
         {
             text : "更新内容",
             btnStyle : "gray",
-            callback : function(KDilog){
-                KDilog.setContent({
+            callback : function(Dilog){
+                Dilog.setContent({
                     loadType : 1,
                     text : "对话框内容改变了，哈哈！！！"
                 }, 5);
@@ -62,28 +62,28 @@ var dilog = new KDilog({
         {
             text : "取消",
             btnStyle : "gray",
-            callback : function(KDilog){
-                KDilog.destroy();
+            callback : function(Dilog){
+                Dilog.destroy();
                 return true;
             }
         }]
     }
 });
 //警告对话框
-var alertDilog = new KDilog({
+var alertDilog = new K.Ui.Dilog({
     isConDilog : false
 });
 alertDilog.createAlert(280, "警告对话框", "警告对话框内容");
 //内容对话框
-var confirmDilog = new KDilog({
+var confirmDilog = new K.Ui.Dilog({
     isConDilog : false
 });
-confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Kdilog, $btn){
-    Kdilog.destroy();
+confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Dilog, $btn){
+    Dilog.destroy();
 });
 var confirmDilogId = confirmDilog.getDilogId();
 //注册拖动
-var drag = new KDrag({
+var drag = new K.Ui.Drag({
     hander : $("#"+confirmDilogId+" .ks-dilog-title"),
     dragObj : $("#"+confirmDilogId)
 });
@@ -174,7 +174,7 @@ drag.init();</code></pre>
     </tr>
 </table>
 <a id="function"></a>
-<div class="de-subtitle">KDilog方法</div>
+<div class="de-subtitle">K.Ui.Dilog方法</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th width="470">方法名</th>
@@ -211,7 +211,7 @@ drag.init();</code></pre>
 	$(function(){
 		//创建内容对话框
 		$("#createConDilog").bind("click", function(){
-			var dilog = new KDilog({
+			var dilog = new K.Ui.Dilog({
 				width : 300,
 				title :　{
 					text : "选择人员"
@@ -225,16 +225,16 @@ drag.init();</code></pre>
 					items : [{
 						text : "确定",
 						btnStyle : "blue",
-						callback : function(KDilog){
-							KDilog.setPosition(8, {left:10, top:20});
+						callback : function(Dilog){
+							Dilog.setPosition(8, {left:10, top:20});
 							return true;
 						}
 					},
 					{
 						text : "更新内容",
 						btnStyle : "gray",
-						callback : function(KDilog){
-							KDilog.setContent({
+						callback : function(Dilog){
+							Dilog.setContent({
 								loadType : 1,
 								text : "对话框内容改变了，哈哈！！！"
 							}, 5);
@@ -244,8 +244,8 @@ drag.init();</code></pre>
 					{
 						text : "取消",
 						btnStyle : "gray",
-						callback : function(KDilog){
-							KDilog.destroy();
+						callback : function(Dilog){
+							Dilog.destroy();
 							return true;
 						}
 					}]
@@ -254,21 +254,21 @@ drag.init();</code></pre>
 		});
 		//创建警告对话框
 		$("#createAlertDilog").bind("click", function(){
-			var alertDilog = new KDilog({
+			var alertDilog = new K.Ui.Dilog({
 				isConDilog : false
 			});
 			alertDilog.createAlert(280, "警告对话框", "警告对话框内容");
 		});
 		//创建确认对话框
 		$("#createConfirmDilog").bind("click", function(){
-			var confirmDilog = new KDilog({
+			var confirmDilog = new K.Ui.Dilog({
 				isConDilog : false
 			});
-			confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Kdilog, $btn){
-				Kdilog.destroy();
+			confirmDilog.createConfirm(440, "确认对话框", "确认对话框内容确认对话框内容确认对话框内容确认对话框内容确认对话框内容", function(Dilog, $btn){
+				Dilog.destroy();
 			});
 			var confirmDilogId = confirmDilog.getDilogId();
-			var drag = new KDrag({
+			var drag = new K.Ui.Drag({
 				hander : $("#"+confirmDilogId+" .ks-dilog-title"),
 				dragObj : $("#"+confirmDilogId)
 			});

@@ -5,14 +5,6 @@
  */
 Ks().package("K.Ui", function(Ks){
 	this.TPanel = Ks.creatClass(K.Ui.Widget, {
-		defaults : {
-			$panel : $("#panel"),
-			config : CONFIG,
-			selectItem : ".item",
-			selectFunc : function($selectItem){
-				return true;
-			}
-		},
 		_conScroll : null,
 		_registerEvent : function(){
 			var self = this;
@@ -59,6 +51,14 @@ Ks().package("K.Ui", function(Ks){
 			}
 		},
 		init : function(options){
+			this.defaults = {
+				$panel : $("#panel"),
+				config : CONFIG,
+				selectItem : ".item",
+				selectFunc : function($selectItem){
+					return true;
+				}
+			};
 			this.callSuper(options);
 			var config = this.defaults.config;
 			this.$widget = this.defaults.$panel;

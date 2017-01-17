@@ -1,10 +1,10 @@
 /*
- * FLASH tween算法
+ * JS 补间动画
  * author:张渊
  * modifyTime:2015-11-13
  */
-(function(){
-	var KTween = {
+Ks().package("K", function(Ks){
+	this.Tween = {
 		Linear: function(t,b,c,d){ return c*t/d + b; },
 		Quad: {
 			easeIn: function(t,b,c,d){
@@ -148,5 +148,4 @@
 			}
 		}
 	};
-	window.KTween = KTween;
-})();
+});

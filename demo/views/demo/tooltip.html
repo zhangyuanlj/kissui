@@ -225,7 +225,7 @@
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入position、tootip、renderComp代码包*/
-KRenderComp.rendertooltip();</code></pre>
+K.Ui.RenderWidget.rendertooltip();</code></pre>
 </div>
 <a id="dmCreate"></a>
 <div class="de-title">代码创建</div>
@@ -238,7 +238,7 @@ KRenderComp.rendertooltip();</code></pre>
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入position、tootip代码包*/
-var tooltip = new KTootip({
+var tooltip = new K.Ui.Tootip({
     $eventObj : $("#tooltip4"),
     width : 120,
     dynamic : {
@@ -247,7 +247,7 @@ var tooltip = new KTootip({
     }
 });</code></pre>
 </div>
-<div class="de-subtitle">KTootip配置说明</div>
+<div class="de-subtitle">K.Ui.Tootip配置说明</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th>属性</th>
@@ -295,7 +295,7 @@ var tooltip = new KTootip({
         <td>可选</td>
     </tr>
 </table>
-<div class="de-subtitle">KTootip方法</div>
+<div class="de-subtitle">K.Ui.Tootip方法</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th width="120">方法名</th>
@@ -313,8 +313,8 @@ var tooltip = new KTootip({
 <script type="text/javascript" src="../../src/kissui.tootip.js"></script>
 <script type="text/javascript">
 	$(function(){
-		KRenderComp.renderTooltip();
-		var tooltip = new KTootip({
+		K.Ui.RenderWidget.renderTooltip();
+		var tooltip = new K.Ui.Tootip({
 			$eventObj : $("#tooltip4"),
 			width : 120,
 			dynamic : {

@@ -269,8 +269,8 @@
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入calendar、comboBox、datePicker、renderComp代码包*/
-KRenderComp.renderFormComp();
-var select1 = new KComboBox({
+K.Ui.RenderWidget.renderFormComp();
+var select1 = new K.Ui.ComboBox({
     $parent : $("#select1"),
     changeFunc : function(value, text){
         alert(KRenderComp.getRadioValue("xx"));
@@ -281,7 +281,7 @@ var select1 = new KComboBox({
         alert(KRenderComp.getDatePickerValue("date3"));
     }
 });
-var select2 = new KComboBox({
+var select2 = new K.Ui.ComboBox({
     $parent : $("#select2"),
     width : 120,
     align : "center",
@@ -301,19 +301,19 @@ var select2 = new KComboBox({
 <script type="text/javascript" src="../../src/kissui.datepicker.js"></script>
 <script type="text/javascript">
 	$(function(){
-		KRenderComp.renderFormComp();
-		var select1 = new KComboBox({
+		K.Ui.RenderWidget.renderFormComp();
+		var select1 = new K.Ui.ComboBox({
 			$parent : $("#select1"),
 			changeFunc : function(value, text){
-				alert(KRenderComp.getRadioValue("xx"));
-				alert(KRenderComp.getCheckboxValue("xq"));
-				alert(KRenderComp.getSwitchValue("fx1"));
-				alert(KRenderComp.getDatePickerValue("date1"));
-				alert(KRenderComp.getDatePickerValue("date2"));
-				alert(KRenderComp.getDatePickerValue("date3"));
+				alert(K.Ui.RenderWidget.getRadioValue("xx"));
+				alert(K.Ui.RenderWidget.getCheckboxValue("xq"));
+				alert(K.Ui.RenderWidget.getSwitchValue("fx1"));
+				alert(K.Ui.RenderWidget.getDatePickerValue("date1"));
+				alert(K.Ui.RenderWidget.getDatePickerValue("date2"));
+				alert(K.Ui.RenderWidget.getDatePickerValue("date3"));
 			}
 		});
-		var select2 = new KComboBox({
+		var select2 = new K.Ui.ComboBox({
 			$parent : $("#select2"),
 			width : 120,
 			align : "center",

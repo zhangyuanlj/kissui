@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-12
  */
-(function($){
-	var KTootip = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Tootip = function(config){
 		this.$tootip = null;
 		this.config = {
 			$eventObj : $("#show-tootip"),
@@ -15,13 +15,13 @@
 				enable : false,
 				direction : 1
 			},
-			animate : false	,
+			animate : false,
 			offsetPx : 0
 		};
 		this._setConfig(config);
 		this._init();
 	};
-	KTootip.prototype = {
+	this.Tootip.prototype = {
 		_init : function(){
 			var that = this;
 			var _config = this.config;
@@ -35,7 +35,7 @@
 			this.$tootip = $("#"+tooltipId);
 			this.$tootip.width(_config.width);
 			this.$tootip.hide();
-			var Position = new KPosition({
+			var Position = new K.Ui.Position({
 				$targetObj : _config.$eventObj,  
 				$layer : this.$tootip,
 				offsetPx : _config.offsetPx        
@@ -46,9 +46,9 @@
 			else{
 				this._setPosition(Position, _config.location);
 			}
-			_config.$eventObj.live("mouseover", function(){
+			_config.$eventObj.on("mouseover", function(){
 				that._show();
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				that._hide();
 			});
 		},
@@ -105,5 +105,4 @@
 			return null;
 		}
 	};
-	window.KTootip = KTootip;
-})(jQuery);
+});

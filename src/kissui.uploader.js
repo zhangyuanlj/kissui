@@ -3,10 +3,10 @@
  * author:张渊
  * modifyTime:2015-12-2
  */
-(function($){
+Ks().package("K.Ui", function(Ks){
 	var FILE_LOADBAR_WIDTH = 120;
 	var LOADBAR_SHOW_TIME = 2;
-	var KUploader = function(config){
+	this.Uploader = function(config){
 		this.uploader = null;
 		this.uploaderDestory = false;
 		this.config = {
@@ -36,7 +36,7 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KUploader.prototype = {
+	this.Uploader.prototype = {
 		_init : function(){
 			var that = this;
 			var _config = this.config;
@@ -202,5 +202,4 @@
 			return null;
 		}
 	};
-	window.KUploader = KUploader;
-})(jQuery);
+});

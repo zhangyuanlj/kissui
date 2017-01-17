@@ -18,8 +18,8 @@
  *
  *
  */
-(function($){
-	var KRollLayer = function(options){
+Ks().package("K.Ui", function(Ks){
+	this.RollLayer = function(options){
 		var self = this;
 		var isAnimate = false;
 		var scrollLeft = 0, scrollTop = 0;
@@ -246,7 +246,7 @@
 			});
 		}
 		function _bindEvent(){
-			$(_options.prevBtn).die().live("click", function(){
+			$(_options.prevBtn).off().on("click", function(){
 				if(_options.direction === 1){
 					if(!_checkHorPrevScroll()){
 						return false;
@@ -260,7 +260,7 @@
 					_verScrollPlay("prev");
 				}
 			});
-			$(_options.nextBtn).die().live("click", function(){
+			$(_options.nextBtn).off().on("click", function(){
 				if(_options.direction === 1){
 					if(!_checkHorNextScroll()){
 						return false;
@@ -274,7 +274,7 @@
 					_verScrollPlay("next");
 				}
 			});
-			$(_options.listLayer).die().live("click", function(){
+			$(_options.listLayer).off().on("click", function(){
 				var itemsIndex = $(this).index();
 				if(_options.direction === 1){
 					self.setHorSelectItems(itemsIndex);
@@ -286,5 +286,4 @@
 			});
 		}
 	};
-	window.KRollLayer = KRollLayer;
-})(jQuery);
+})();

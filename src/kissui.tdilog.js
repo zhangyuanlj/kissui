@@ -5,18 +5,6 @@
  */
 Ks().package("K.Ui", function(Ks){
 	this.TDilog = Ks.creatClass(K.Ui.Widget, {
-		defaults : {
-			$dilog : $("#dilog"),
-			config : CONFIG,
-			callback : {
-				cancel : function(){
-					return true;
-				},
-				confirm : function(){
-					return true;
-				}
-			}
-		},
 		_getDilogH : function(){
 			var dilogHeight = parseFloat(this.$widget.attr("data-height"))*this.baseFontSize;
 			return dilogHeight;
@@ -64,6 +52,18 @@ Ks().package("K.Ui", function(Ks){
 			});
 		},
 		init : function(options){
+			this.defaults = {
+				$dilog : $("#dilog"),
+				config : CONFIG,
+				callback : {
+					cancel : function(){
+						return true;
+					},
+					confirm : function(){
+						return true;
+					}
+				}
+			};
 			this.callSuper(options);
 			var config = this.defaults.config;
 			this.$widget = this.defaults.$dilog;

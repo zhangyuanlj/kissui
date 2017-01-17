@@ -4,8 +4,8 @@
   * modifyTime:2015-12-15
   *
   */
-(function($){
-	var KSlideBox = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.SlideBox = function(config){
 		this.config = {
 			$item : $("#slideItem"),
 			$title : null,
@@ -25,7 +25,7 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KSlideBox.prototype = {
+	this.SlideBox.prototype = {
 		/**
 		 * 设置config
 		 * @param Object config 配置项
@@ -52,29 +52,29 @@
 				start();
 			}
 			//绑定事件
-			$nav.live("mouseover", function(){
+			$nav.on("mouseover", function(){
 				var $this = $(this);
 				var index = $this.index();
 				that._play(index);
 				clear();
-			}).live("mouseout", function(){
+			}).on("mouseout", function(){
 				delay();
 			});
 			if($prevBtn != null){
-				$prevBtn.die().live("click", function(){
+				$prevBtn.off().on("click", function(){
 					_prev();
-				}).live("mouseover", function(){
+				}).on("mouseover", function(){
 					clear();
-				}).live("mouseout", function(){
+				}).on("mouseout", function(){
 					delay();
 				});
 			}
 			if($nextBtn != null){
-				$nextBtn.die().live("click", function(){
+				$nextBtn.off().on("click", function(){
 					_next();
-				}).live("mouseover", function(){
+				}).on("mouseover", function(){
 					clear();
-				}).live("mouseout", function(){
+				}).on("mouseout", function(){
 					delay();
 				});
 			}
@@ -142,5 +142,4 @@
 			this.config.onShow(this);
 		}
 	};
-	window.KSlideBox = KSlideBox;
-})(jQuery);
+})();

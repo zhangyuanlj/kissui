@@ -13,8 +13,8 @@
   * @options lockY 是否垂直锁定
   *
   */
-(function($){
-	var KDrag = function(options){
+Ks().package("K.Ui", function(Ks){
+	this.Drag = function(options){
 		var that = this;
 		var isTop = window == top;
 		var $document = isTop ? $(document) : $(window.parent.document);
@@ -56,7 +56,7 @@
 		 * @param function callback 触发拖动时执行的回调函数
 		 */
 		this.bindStartDraggable = function(callback){
-			$hander.live("mousedown", function(e){
+			$hander.on("mousedown", function(e){
 				_startDraggable(this, $dragObj, e);
 				if(callback){
 					callback();
@@ -82,7 +82,7 @@
 			$document.mouseup(function(e){
 				_endDraggable(this, e, callback);
 			});
-			$(_options.hander).live("mouseup", function(e){
+			$(_options.hander).on("mouseup", function(e){
 				_endDraggable(this, e, callback);
 			});
 		}
@@ -279,5 +279,4 @@
 			}
 		}
 	};
-	window.KDrag = KDrag;
-})(jQuery);
+});

@@ -3,14 +3,14 @@
  * author:张渊
  * modifyTime:2015-12-15
  */
-(function($){
-	var KMask = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Mask = function(config){
 		this.$mask = null;
 		this.config = {
 			backGround : "#000",
 			opacity : 0.3,
 			zIndex : 10000,
-			onMaskLayerClick : function(KMask){
+			onMaskLayerClick : function(Mask){
 				return true;
 			}
 		};
@@ -18,7 +18,7 @@
 		this._zIndex = this.config.zIndex;
 		this._init();
 	};
-	KMask.prototype = {
+	this.Mask.prototype = {
 		_init : function(){
 			var that = this;
 			var isTop = window == top;
@@ -34,7 +34,7 @@
 			this.$mask = isTop ? $("#"+maskId) : $("#"+maskId, window.parent.document);
 			this.$mask.height(maskHeight);
 			this.reset();
-			this.$mask.die().live("click", function(){
+			this.$mask.off().on("click", function(){
 				_config.onMaskLayerClick(that);
 			});
 		},
@@ -120,10 +120,9 @@
 		},
 		//移除遮罩层
 		remove : function(){
-			this.$mask.die("click");
+			this.$mask.off("click");
 			this.$mask.remove();
 			return null;
 		}
 	};
-	window.KMask = KMask;
-})(window.jQuery);
+});

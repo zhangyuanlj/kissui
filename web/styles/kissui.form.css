@@ -10,6 +10,10 @@
 	border-radius: 5px;
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
+.ks-input-box:hover, .ks-textarea:hover, .ks-select-box:hover {
+	border-color: #66afe9;
+	box-shadow: 0 0 5px rgba(81, 203, 238, 0.8);
+}
 .ks-input-box, .ks-textarea{
 	overflow:hidden;
 }

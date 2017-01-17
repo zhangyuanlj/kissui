@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-13
  */
-(function($){
-	var KDropDown = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.DropDown = function(config){
 		this.config = {
 			$targetObj : $("#target"),  
 			$layer : $("#dropdown-list"),
@@ -20,13 +20,13 @@
 		}
 		this._init();
 	};
-	KDropDown.prototype = {
+	this.DropDown.prototype = {
 		_init : function(){
 			var that = this;
 			var _config = this.config;
 			var $layer = _config.$layer;
 			$layer.width(_config.layerWidth);
-			var Position = new KPosition({
+			var Position = new K.Ui.Position({
 				$targetObj : _config.$targetObj,  
 				$layer : _config.$layer,
 				offsetPx : 0       
@@ -42,14 +42,14 @@
 			else{
 				that.layerHide();
 				if(_config.triggerMode == "mouseover"){
-					_config.$targetObj.live("mouseover", function(){
+					_config.$targetObj.on("mouseover", function(){
 						that.layerShow();
-					}).live("mouseout", function(){
+					}).on("mouseout", function(){
 						that.layerHide();
 					});
 				}
 				else if(_config.triggerMode == "mousedown"){
-					_config.$targetObj.live("mousedown", function(e){
+					_config.$targetObj.on("mousedown", function(e){
 						if(e.which != 1){
 							return false;
 						}
@@ -94,5 +94,4 @@
 			this.config.$layer.hide();
 		}
 	};
-	window.KDropDown = KDropDown;
-})(jQuery);
+});

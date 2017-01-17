@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-12-9
  */
-(function($){
-	var KDilog = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Dilog = function(config){
 		this.$dilog = null;
 		this.config = {
 			$parent : $("body"),                   
@@ -28,14 +28,14 @@
 				items : [{
 					text : "确定",
 					btnStyle : "blue",
-					callback : function(KDilog, $btn){
+					callback : function(Dilog, $btn){
 						return true;
 					}
 				},
 				{
 					text : "取消",
 					btnStyle : "gray",
-					callback : function(KDilog, $btn){
+					callback : function(Dilog, $btn){
 						return true;
 					}
 				}]
@@ -46,7 +46,7 @@
 			this._init();
 		}
 	};
-	KDilog.prototype = {
+	this.Dilog.prototype = {
 		_init : function(){
 			this._createDiog();
 		},
@@ -82,7 +82,7 @@
 			if(_config.title.show){
 				_$dilog.append(dilogTitleTemp);
 				_$dilog.children().find("h4").html(_config.title.text);
-				$("#"+dilogId+" .ks-dilog-title a", this.config.$parent).live("mousedown", function(e){
+				$("#"+dilogId+" .ks-dilog-title a", this.config.$parent).on("mousedown", function(e){
 					that.destroy();
 					e.stopPropagation();
 				});
@@ -139,7 +139,7 @@
 			}
 			var that = this;
 			var dilogId = this.$dilog.attr("id");
-			$("#"+dilogId+" .ks-dilog-btn input", this.config.$parent).live("mousedown", function(e){
+			$("#"+dilogId+" .ks-dilog-btn input", this.config.$parent).on("mousedown", function(e){
 				var $this = $(this);
 				var id = $this.attr("id");
 				btnCallback[id](that, $this);
@@ -248,8 +248,8 @@
 				items : [{
 					text : "确定",
 					btnStyle : "blue",
-					callback : function(Kdilog){
-						Kdilog.destroy();
+					callback : function(Dilog){
+						Dilog.destroy();
 						return true;
 					}
 				}]
@@ -277,9 +277,9 @@
 				items : [{
 					text : "确定",
 					btnStyle : "blue",
-					callback : function(Kdilog, $btn){
+					callback : function(Dilog, $btn){
 						if(callback){
-							callback(Kdilog, $btn);
+							callback(Dilog, $btn);
 						}
 						return true;
 					}
@@ -287,8 +287,8 @@
 				{
 					text : "取消",
 					btnStyle : "gray",
-					callback : function(Kdilog){
-						Kdilog.destroy();
+					callback : function(Dilog){
+						Dilog.destroy();
 						return true;
 					}
 				}]
@@ -388,5 +388,4 @@
 			return null;
 		}
 	};
-	window.KDilog = KDilog;
-})(window.jQuery || window.Zepto);
+});

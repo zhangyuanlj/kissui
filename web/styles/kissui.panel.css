@@ -1,0 +1,112 @@
+/*
+ * panel面板
+ * author:张渊
+ * modifyTime:2016-12-29
+ */
+.ks-panel{
+	margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #dee5e7;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+}
+.ks-panel-title{
+	height: 41px;
+	line-height: 41px;
+    color: #333;
+    font-size: 12px;
+    font-weight: 100;
+    padding: 0 15px;
+    border-bottom: 1px solid #edf1f2;
+    background-color: #f6f8f8;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+}
+.ks-panel-title h4{
+	float: left;
+	font-size: 14px;
+}
+.ks-panel-title .small-text{
+    color: #777;
+    font-size: 12px;
+    font-weight: 100;
+    margin-left: 10px; 
+}
+.ks-panel-title .title-icon, .ks-panel-title .tool a{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.ks-panel-title .title-icon{
+    vertical-align: -3px;
+    margin-right: 5px;
+    *vertical-align: 0;
+}
+.ks-panel-title .tool{
+	float: right;
+    font-size: 0;
+}
+.ks-panel-title .tool a{
+    margin-top: 13px;
+    margin-right: 10px;
+}
+.ks-panel-title .tool a.last{
+    margin-right: 0;
+}
+.ks-panel-con{
+    padding: 15px 20px 20px 20px;
+    background-color: #fff;
+}
+.ks-panel-footer{
+    color: #777;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+/*主要*/
+.ks-panel-primary{
+    border-color: #23b7e5;
+}
+.ks-panel-primary .ks-panel-title{
+    color: #fff;
+    background-color: #23b7e5;
+    border-color: #23b7e5;
+}
+/*成功*/
+.ks-panel-success{
+    border-color: #1c84c6;
+}
+.ks-panel-success .ks-panel-title{
+    color: #fff;
+    background-color: #1c84c6;
+    border-color: #1c84c6;
+}
+/*消息*/
+.ks-panel-info{
+    border-color: #23c6c8;
+}
+.ks-panel-info .ks-panel-title{
+    color: #fff;
+    background-color: #23c6c8;
+    border-color: #23c6c8;
+}
+/*警告*/
+.ks-panel-warning{
+    border-color: #f8ac59;
+}
+.ks-panel-warning .ks-panel-title{
+    color: #fff;
+    background-color: #f8ac59;
+    border-color: #f8ac59;
+}
+/*危险*/
+.ks-panel-danger{
+    border-color: #ed5565;
+}
+.ks-panel-danger .ks-panel-title{
+    color: #fff;
+    background-color: #ed5565;
+    border-color: #ed5565;
+}

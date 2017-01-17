@@ -4,8 +4,9 @@
   * modifyTime:2015-12-15
   *
   */
-(function($){
-	var KTab = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.Tab = function(config){
+		this.$doc = $(document);
 		this.config = {
 			$tabTitle : $("#tabTitle"),
 			$tabCon : $("#tabCon"),
@@ -16,7 +17,7 @@
             slideInterval : 5000,   
             slideDelay : 300,       
             autoInit : true,        
-            onShow:function(KTab, $selectTab, $selectCon){ 
+            onShow:function(Tab, $selectTab, $selectCon){ 
 				return true;
 			}    
 		};
@@ -26,7 +27,7 @@
 			this.init();
 		}
 	};
-	KTab.prototype = {
+	this.Tab.prototype = {
 		/**
 		 * 设置config
 		 * @param Object config 配置项
@@ -49,20 +50,28 @@
 				start();
 			}
 			//绑定事件
-			$tabTitle.die().live(_config.triggerEvent, function(){
+			this.$doc.off($tabTitle.selector).on(_config.triggerEvent, $tabTitle.selector, function(e){
 				var $this = $(this);
 				var selectIndex = $this.index();
 				that.selectTab(selectIndex);
 				clear();
-			}).live("mouseover", function(){
-				clear();
-			}).live("mouseout", function(){
-				delay();
+				e.stopPropagation();
 			});
-			$tabCon.live("mouseover", function(){
+			this.$doc.off($tabTitle.selector).on("mouseover", $tabTitle.selector, function(e){
 				clear();
-			}).live("mouseout", function(){
+				e.stopPropagation();
+			});
+			this.$doc.off($tabTitle.selector).on("mouseout", $tabTitle.selector, function(e){
 				delay();
+				e.stopPropagation();
+			});
+			this.$doc.off($tabCon.selector).on("mouseover", $tabCon.selector, function(e){
+				clear();
+				e.stopPropagation();
+			});
+			this.$doc.off($tabCon.selector).on("mouseout", $tabCon.selector, function(e){
+				delay();
+				e.stopPropagation();
 			});
 			function start(){
 				intervalId = setInterval(function(){
@@ -147,5 +156,4 @@
 			this.selectTab(_config.$tabTitle.length-1);
 		}
 	};
-	window.KTab = KTab;
-})(window.jQuery || window.Zepto);
+});

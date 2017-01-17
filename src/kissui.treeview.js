@@ -3,8 +3,9 @@
  * author:张渊
  * modifyTime:2016-12-8
  */
-(function($){
-	var KTreeView = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.TreeView = function(config){
+		this.$doc = $(document);
 		this.$treeView = null;
 		this.defaultNodeId = -1;
 		this.isRoot = true;
@@ -40,7 +41,7 @@
 		this._setConfig(config);
 		this._init();
 	};
-	KTreeView.prototype = {
+	this.TreeView.prototype = {
 		/**
 		 * 设置config
 		 * @param Object config 配置项
@@ -243,10 +244,10 @@
 		_expandEvent : function(){
 			var $tree = this.$treeView;
 			var treeViewId = $tree.attr("id");
-			var $fold = $("#"+treeViewId+" .ks-treeview-fold");
 			var that = this;
+			var selector = "#"+treeViewId+" .ks-treeview-fold";
 			var _config = this.config;
-			$fold.die().live("click", function(e){
+			this.$doc.off(selector).on("click", selector, function(e) {
 				that._expandEventFunc($(this), treeViewId, _config);
 				e.stopPropagation();
 			});
@@ -255,9 +256,9 @@
 		_bindNodeEvent : function(){
 			var $tree = this.$treeView;
 			var treeViewId = $tree.attr("id");
-			var $node = $("#"+treeViewId+" .ks-treeview-a");
+			var selector = "#"+treeViewId+" .ks-treeview-a";
 			var _config = this.config;
-			$node.die().live("click", function(e){
+			this.$doc.off(selector).on("click", selector, function(e) {
 				var $this = $(this);
 				var $parent = $this.parents(".ks-treeview-li");
 				var $nodeTag = $this.children(".ks-treeview-node");
@@ -291,10 +292,10 @@
 		_nodeCheckedEvent : function(){
 			var $tree = this.$treeView;
 			var treeViewId = $tree.attr("id");
-			var $nodeCheck = $("#"+treeViewId+" .ks-treeview-check");
 			var that = this;
+			var selector = "#"+treeViewId+" .ks-treeview-check";
 			var _config = this.config;
-			$nodeCheck.die().live("click", function(e){
+			this.$doc.off(selector).on("click", selector, function(e) {
 				var $this = $(this);
 				var $parent = $this.parents(".ks-treeview-li");
 				var nodeId = $parent.attr("data-id");
@@ -491,5 +492,4 @@
 			return null;
 		}
 	};
-	window.KTreeView = KTreeView;
-})(jQuery);
+});

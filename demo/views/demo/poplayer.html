@@ -166,10 +166,10 @@
 <div class="de-demo-code">
 	<pre><code class="javascript">//动态创建遮罩层，需要导入maskLayer代码包
 $("#showMask").bind("click", function(){
-    var mask = new KMask({
-        onMaskLayerClick : function(KMask){
-            KMask.fadeOut(300, function(){
-                KMask.remove();
+    var mask = new K.Ui.Mask({
+        onMaskLayerClick : function(Mask){
+            Mask.fadeOut(300, function(){
+                Mask.remove();
             });
         }
     });
@@ -224,7 +224,7 @@ $("#showMask").bind("click", function(){
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入position、dropDown、renderComp代码包*/
-KRenderComp.renderDropDown();</code></pre>
+K.Ui.RenderWidget.renderDropDown();</code></pre>
 </div>
 <a id="dmCreate"></a>
 <div class="de-title">代码创建</div>
@@ -244,14 +244,14 @@ KRenderComp.renderDropDown();</code></pre>
 <div class="de-subtitle">JS代码</div>
 <div class="de-demo-code">
 	<pre><code class="javascript">/*需要导入position、dropDown代码包*/
-var poplayer3 = new KDropDown({
+var poplayer3 = new K.Ui.DropDown({
     $targetObj : $("#poplayer3"),  
     $layer : $("#poplayer3 .ks-poplayer"),
     layerWidth : 310,
     location : "top"
 });</code></pre>
 </div>
-<div class="de-subtitle">KDropDown配置说明</div>
+<div class="de-subtitle">K.Ui.DropDown配置说明</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th>属性</th>
@@ -289,7 +289,7 @@ var poplayer3 = new KDropDown({
         <td>可选（值为mouseover或者mousedown）</td>
     </tr>
 </table>
-<div class="de-subtitle">KDropDown方法</div>
+<div class="de-subtitle">K.Ui.DropDown方法</div>
 <table class="de-table" cellspacing="0" cellpadding="0" border="0">
     <tr>
         <th width="120">方法名</th>
@@ -308,18 +308,18 @@ var poplayer3 = new KDropDown({
 <script type="text/javascript" src="../../src/kissui.masklayer.js"></script>
 <script type="text/javascript">
 	$(function(){
-		KRenderComp.renderDropDown();
-		var poplayer3 = new KDropDown({
+		K.Ui.RenderWidget.renderDropDown();
+		var poplayer3 = new K.Ui.DropDown({
 			$targetObj : $("#poplayer3"),  
 			$layer : $("#poplayer3 .ks-poplayer"),
 			layerWidth : 310,
 			location : "top"
 		});
 		$("#showMask").bind("click", function(){
-			var mask = new KMask({
-				onMaskLayerClick : function(KMask){
-					KMask.fadeOut(300, function(){
-						KMask.remove();
+			var mask = new K.Ui.Mask({
+				onMaskLayerClick : function(Mask){
+					Mask.fadeOut(300, function(){
+						Mask.remove();
 					});
 				}
 			});

@@ -3,8 +3,8 @@
  * author:张渊
  * modifyTime:2015-11-12
  */
-(function(window){
-	var KDateTime = function(config){
+Ks().package("K", function(Ks){
+	this.DateTime = function(config){
 		var that = this;
 		var weekdays = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"];
 		var timer = null;     //计时器
@@ -91,5 +91,4 @@
 			_printTime();
 		}
 	};
-	window.KDateTime = KDateTime;
-})(window);
+});

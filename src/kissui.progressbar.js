@@ -3,11 +3,11 @@
  * author:张渊
  * modifyTime:2016-10-11
  */
-(function(top) {
-	var KProgressBar = top.KProgressBar = function(config){
+Ks().package("K.Ui", function(Ks){
+	this.ProgressBar = function(config){
 		var $progressBar = null;
 		var that = this;
-		var public = KProgressBar.prototype;
+		var public = K.Ui.ProgressBar.prototype;
 		var defaults = {
 			speed : 5000,
 			callback : function(){
@@ -81,7 +81,8 @@
 			return parseFloat($progressBar.attr("data-progress"));
 		};
 		public.start = function(){
-			setStatus(0.1);
+			var progressValue = this.getStatus();
+			setStatus(progressValue);
 			loader();
 		};
 		public.done = function(){
@@ -104,4 +105,4 @@
 			$progressBar = null;
 		};
 	};
-})(window);
+});
